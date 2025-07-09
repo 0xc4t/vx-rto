@@ -93,13 +93,14 @@
         "spacing": 10
     },
 
-    "network": {
-        "markup": "pango",
-        "interface": "wlan0",
-        "format-wifi": "<span color='#cba6f7'>󰘊</span> <span color='#cdd6f4'>{essid}({signalStrength}%)</span>",
-        "format-ethernet": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{ipaddr}/{cidr}</span>",
-        "format-disconnected": "<span color='#cba6f7'>󰘚</span> <span color='#cdd6f4'>disconnected</span>",
-        "tooltip": false,
-        "max-length": 50
-    }
+"network": {
+    "markup": "pango",
+    "interface": "wlan0",
+    "format-wifi": "<span color='#cba6f7'>󰘊</span> <span color='#cdd6f4'>{essid}({signalStrength}%) ↓{bandwidthDownBits}</span>",
+    "format-ethernet": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{ipaddr}/{cidr} ↓{bandwidthDownBits}</span>",
+    "format-disconnected": "<span color='#cba6f7'>󰘚</span> <span color='#cdd6f4'>disconnected</span>",
+    "tooltip": true,
+    "interval": 1,
+    "max-length": 50
+}
 }
