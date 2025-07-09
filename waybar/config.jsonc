@@ -1,7 +1,6 @@
 {
     "layer": "bottom",
-    "modules-left": ["custom/launcher", "clock"],
-    "modules-center": ["hyprland/workspaces"],
+    "modules-left": ["custom/launcher", "clock","hyprland/workspaces"],
     "modules-right": ["cpu", "memory", "disk", "pulseaudio", "battery", "network", "custom/power"],
 
     "pulseaudio": {
@@ -98,11 +97,12 @@
 "network": {
     "markup": "pango",
     "interface": "wlan0",
-    "format-wifi": "<span color='#cba6f7'>󰘊</span> <span color='#cdd6f4'>{essid}({signalStrength}%) ↓{bandwidthDownBits}</span>",
-    "format-ethernet": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{ipaddr}/{cidr} ↓{bandwidthDownBits}</span>",
+    "format-wifi": "<span color='#cba6f7'>󰘊</span> <span color='#cdd6f4'>{essid}</span> ↓<span color='#cdd6f4'>{bandwidthDownBits:>5}</span>",
+    "format-ethernet": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{ipaddr}</span> ↓<span color='#cdd6f4'>{bandwidthDownBits:>5}</span>",
     "format-disconnected": "<span color='#cba6f7'>󰘚</span> <span color='#cdd6f4'>disconnected</span>",
     "tooltip": true,
     "interval": 1,
-    "max-length": 50
+    "min-length": 25,
+    "max-length": 25
 }
 }
