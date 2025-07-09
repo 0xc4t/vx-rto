@@ -1,114 +1,105 @@
 {
-	"layer": "bottom",
-	"modules-left": ["custom/launcher","clock","hyprland/workspaces"],
-	"modules-right": ["cpu","memory","disk","pulseaudio","battery","network","custom/power"],
+    "layer": "bottom",
+    "modules-left": ["custom/launcher", "clock"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["cpu", "memory", "disk", "pulseaudio", "battery", "network", "custom/power"],
 
-	"pulseaudio": {
-		"tooltip": false,
-		"scroll-step": 1,
-		"format": "{icon}  {volume}%",
-		"format-muted": "muted",
-		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
-		"format-icons": {
-			"default": ["", "", ""]
-		}
-	},
+    "pulseaudio": {
+        "tooltip": false,
+        "scroll-step": 1,
+        "markup": "pango",
+        "format": "<span color='#cba6f7'>{icon}</span> <span color='#cdd6f4'>{volume}%</span>",
+        "format-muted": "<span color='#cba6f7'>ﱝ</span> <span color='#cdd6f4'>muted</span>",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "format-icons": {
+            "default": ["", "", ""]
+        }
+    },
 
-	"cava": {
-		"framerate": 240,
-		"autosens": 1,
-		"sensitivity": 5,
-		"bars": 8,
-		"lower_cutoff_freq": 50,
-		"higher_cutoff_freq": 10000,
-		"method": "pulse",
-		"source": "auto",
-		"stereo": false,
-		"reverse": false,
-		"bar_delimiter": 0,
-		"monstercat": true,
-		"waves": true,
-		"noise_reduction": 0.77,
-		"input_delay": 0,
-		"format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
-	},
+    "battery": {
+        "markup": "pango",
+        "bat": "BAT0",
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "<span color='#cba6f7'>{icon}</span> <span color='#cdd6f4'>{capacity}%</span>",
+        "format-icons": ["", "", "", "", ""],
+        "max-length": 25
+    },
 
-	"battery": {
-		"bat": "BAT0",
-		"interval": 60,
-		"states": {
-			"warning": 30,
-			"critical": 15
-		},
-		"format": "{icon}  {capacity}%",
-		"format-icons": ["", "", "", "", ""],
-		"max-length": 25
-	},
+    "disk": {
+        "markup": "pango",
+        "interval": 30,
+        "format": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{percentage_used}%</span>",
+        "path": "/"
+    },
 
-	"disk": {
-		"interval": 30,
-		"format": "  {percentage_used}%",
-		"path": "/"
-	},
+    "cpu": {
+        "markup": "pango",
+        "interval": 15,
+        "format": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{}%</span>",
+        "max-length": 10
+    },
 
-	"cpu": {
-		"interval": 15,
-		"format": "  {}%",
-		"max-length": 10
-	},
+    "memory": {
+        "markup": "pango",
+        "interval": 30,
+        "format": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{}%</span>",
+        "max-length": 10
+    },
 
-	"memory": {
-		"interval": 30,
-		"format": "  {}%",
-		"max-length": 10
-	},
+    "custom/launcher": {
+        "markup": "pango",
+        "format": "<span color='#cba6f7'>󰄛 </span>",
+        "on-click": "wofi --show drun",
+        "on-click-right": "killall rofi",
+        "tooltip": false
+    },
 
-	"custom/launcher": {
-		"format": "󰄛 ",
-		"on-click": "wofi --show drun",
-		"on-click-right": "killall rofi",
-		"tooltip": false
-	},
+    "custom/power": {
+        "markup": "pango",
+        "format": "<span color='#cba6f7'>⏻ </span>",
+        "tooltip": false,
+        "on-click": "bash ~/.config/rofi/powermenu.sh",
+        "on-click-right": "killall rofi"
+    },
 
-	"custom/power": {
-		"format": "⏻ ",
-		"tooltip": false,
-		"on-click": "bash ~/.config/rofi/powermenu.sh",
-		"on-click-right": "killall rofi"
-	},
+    "clock": {
+        "markup": "pango",
+        "format": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{:%A - %B %d, %Y - %R}</span>",
+        "tooltip": false
+    },
 
-	"clock": {
-		"format": "  {:%A - %B %d, %Y - %R}",
-		"tooltip": false
-	},
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "tooltip": true,
+        "format-icons": {
+            "1": "", "2": "", "3": "", "4": "", "5": "",
+            "6": "", "7": "", "8": "", "9": "", "10": "",
+            "urgent": "",
+            "active": "",
+            "default": ""
+        },
+        "persistent_workspaces": {
+            "outputs": ["*"],
+            "workspaces": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        }
+    },
 
-	"hyprland/workspaces": {
-		"format": "{icon}",
-		"tooltip": true,
-		"format-icons": {
-			"1": "", "2": "", "3": "", "4": "", "5": "",
-			"6": "", "7": "", "8": "", "9": "", "10": "",
-			"urgent": "",
-			"active": "",
-			"default": ""
-		},
-		"persistent_workspaces": {
-			"outputs": ["*"],
-			"workspaces": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-		}
-	},
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
 
-	"tray": {
-		"icon-size": 21,
-		"spacing": 10
-	},
-
-	"network": {
-		"interface": "wlan0",
-		"format-wifi": "󰘊 {essid}({signalStrength}%)",
-		"format-ethernet": "  {ipaddr}/{cidr}",
-		"format-disconnected": "disconnected",
-		"tooltip": false,
-		"max-length": 50
-	}
+    "network": {
+        "markup": "pango",
+        "interface": "wlan0",
+        "format-wifi": "<span color='#cba6f7'>󰘊</span> <span color='#cdd6f4'>{essid}({signalStrength}%)</span>",
+        "format-ethernet": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{ipaddr}/{cidr}</span>",
+        "format-disconnected": "<span color='#cba6f7'>󰘚</span> <span color='#cdd6f4'>disconnected</span>",
+        "tooltip": false,
+        "max-length": 50
+    }
 }
