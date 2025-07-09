@@ -16,19 +16,21 @@
         }
     },
 
-    "battery": {
-        "markup": "pango",
-        "bat": "BAT0",
-        "interval": 60,
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "<span color='#cba6f7'>{icon}</span> <span color='#cdd6f4'>{capacity}%</span>",
-        "format-icons": ["", "", "", "", ""],
-        "max-length": 25
+"battery": {
+    "markup": "pango",
+    "format": "<span font='Font Awesome 5 Free 11' color='#cba6f7'>{icon}</span> <span color='#cdd6f4'>{capacity}%</span> - <span color='#cdd6f4'>{time}</span>",
+    "format-charging": "<span font='Font Awesome 5 Free' color='#cba6f7'></span> <span font='Font Awesome 5 Free 11' color='#cba6f7'>{icon}</span> <span color='#cdd6f4'>{capacity}%</span> - <span color='#cdd6f4'>{time}</span>",
+    "format-full": "<span font='Font Awesome 5 Free' color='#cba6f7'></span> <span font='Font Awesome 5 Free 11' color='#cba6f7'>{icon}</span> <span color='#cdd6f4'>Charged</span>",
+    "format-time": "{H}h{M}m",
+    "format-icons": ["", "", "", "", ""],
+    "interval": 1,
+    "states": {
+        "warning": 25,
+        "critical": 10
     },
-
+    "tooltip": false,
+    "on-click": "2"
+},
     "disk": {
         "markup": "pango",
         "interval": 30,
