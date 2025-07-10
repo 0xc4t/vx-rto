@@ -1,8 +1,9 @@
 * {
 	border: none;
 	border-radius: 10;
-        font-family: "JetbrainsMono Nerd Font" ;
+        font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
 	font-size: 15px;
+	font-weight: bold;
 	min-height: 10px;
 }
 
@@ -17,7 +18,7 @@ window#waybar {
     margin-bottom: 0px;
     border-radius: 10px;
     transition: none;
-    background: #1e1e2e; 
+    background: #1e1e2e;
     color: #cba6f7;
     border-bottom: 3px;
     border-style: solid;
@@ -25,7 +26,7 @@ window#waybar {
     transition: 0.3s;
 }
 
-#network:hover { 
+#network:hover {
     color: #1e1e2e;
     background: #cba6f7;
 }
@@ -45,7 +46,7 @@ window#waybar {
     border-style: solid;
     border-color: #1e1e2e;
 }
-#custom-keybinds:hover { 
+#custom-keybinds:hover {
     background: #cba6f7;
     color: #32111C;
 }
@@ -58,12 +59,12 @@ window#waybar {
     margin-bottom: 0px;
     border-radius: 10px;
     transition: none;
-    background: #1e1e2e; 
+    background: #1e1e2e;
     color: #cba6f7;
     border-bottom: 3px;
     border-style: solid;
     border-color: #1e1e2e;
-    transition: 0.3s; 
+    transition: 0.3s;
 }
 
 #cava:hover{
@@ -79,12 +80,12 @@ window#waybar {
     margin-bottom: 0px;
     border-radius: 10px;
     transition: none;
-    background: #1e1e2e; 
+    background: #1e1e2e;
     color: #cba6f7;
     border-bottom: 3px;
     border-style: solid;
     border-color: #1e1e2e;
-    transition: 0.3s; 
+    transition: 0.3s;
 }
 
 #battery:hover{
@@ -101,7 +102,7 @@ window#waybar {
     margin-bottom: 0px;
     border-radius: 10px;
     transition: none;
-    background: #1e1e2e; 
+    background: #1e1e2e;
     color: #cba6f7;
     padding: 8px;
     border-bottom: 3px;
@@ -109,13 +110,13 @@ window#waybar {
     border-color: #1e1e2e;
     transition: 0.3s;
 }
-#pulseaudio:hover{ 
+#pulseaudio:hover{
     background: #cba6f7;
     color: #32111C;
 }
 #pulseaudio.muted {
     color: #cba6f7;
-    background: #1e1e2e; 
+    background: #1e1e2e;
     border-bottom: 3px;
     border-style: solid;
     border-color: #cba6f7;
@@ -123,7 +124,7 @@ window#waybar {
 }
 #pulseaudio.muted:hover {
     background: #cba6f7;
-    color: #32111C; 
+    color: #32111C;
 
 }
 #clock {
@@ -134,7 +135,7 @@ window#waybar {
     margin-bottom: 0px;
     border-radius: 10px;
     transition: none;
-    background: #1e1e2e; 
+    background: #1e1e2e;
     color: #cba6f7;
     border-bottom: 3px;
     border-style: solid;
@@ -142,7 +143,7 @@ window#waybar {
     transition: 0.3s;
 }
 #clock:hover {
-    color: #32111C; 
+    color: #32111C;
     background: #cba6f7;
 }
 #disk{
@@ -153,7 +154,7 @@ window#waybar {
     margin-bottom: 0px;
     border-radius: 10px;
     transition: none;
-    background: #1e1e2e; 
+    background: #1e1e2e;
     color: #cba6f7;
     border-bottom: 3px;
     border-style: solid;
@@ -161,7 +162,7 @@ window#waybar {
     transition: 0.3s;
 }
 #disk:hover{
-    color: #32111C; 
+    color: #32111C;
     background: #cba6f7;
 }
 #privacy{
@@ -172,7 +173,7 @@ window#waybar {
     margin-bottom: 0px;
     border-radius: 10px;
     transition: none;
-    background: #1e1e2e; 
+    background: #1e1e2e;
     color: #cba6f7;
     border-bottom: 3px;
     border-style: solid;
@@ -187,7 +188,7 @@ window#waybar {
     margin-bottom: 0px;
     border-radius: 10px;
     transition: none;
-    background: #1e1e2e; 
+    background: #1e1e2e;
     color: #FEE5E4;
     border-bottom: 3px;
     border-style: solid;
@@ -207,7 +208,7 @@ window#waybar {
     color: #FEE5E4
 }
 #idle_inhibitor.deactivated:hover{
-    color: #32111C; 
+    color: #32111C;
     background: #EF3946;
 }
 
@@ -219,7 +220,7 @@ window#waybar {
     padding-right: 10px;
     border-radius: 10px;
     transition: none;
-    background: #1e1e2e; 
+    background: #1e1e2e;
     color: #cba6f7;
     border-bottom: 3px;
     border-style: solid;
@@ -227,8 +228,8 @@ window#waybar {
     transition: 0.3s;
 }
 
-#memory:hover { 
-    color: #32111C; 
+#memory:hover {
+    color: #32111C;
     background: #cba6f7;
 
 }
@@ -240,7 +241,7 @@ window#waybar {
     padding-right: 10px;
     border-radius: 10px;
     transition: none;
-    background: #1e1e2e; 
+    background: #1e1e2e;
     color: #cba6f7;
     border-bottom: 3px;
     border-style: solid;
@@ -248,7 +249,7 @@ window#waybar {
     transition: 0.3s;
 }
 #cpu:hover {
-    color: #32111C; 
+    color: #32111C;
     background: #cba6f7;
 
 }
@@ -267,20 +268,20 @@ window#waybar {
     border-style: solid;
     border-color: #1e1e2e;
 }
-#custom-launcher:hover { 
+#custom-launcher:hover {
     background: #cba6f7;
     color: #32111C;
 }
 #network.disconnected {
     color: #FEE5E4;
-    background: #32111C; 
+    background: #32111C;
     border-bottom: 3px;
     border-style: solid;
     border-color: #EF3946;
 }
 #network.disconnected:hover {
     background: #EF3946;
-    color: #32111C; 
+    color: #32111C;
 }
 #custom-power {
     font-size: 15px;
@@ -292,7 +293,7 @@ window#waybar {
     margin-bottom: 0px;
     border-radius: 10px;
     transition: none;
-    background: #1e1e2e; 
+    background: #1e1e2e;
     color: #cba6f7;
     border-bottom: 3px;
     border-style: solid;
@@ -309,7 +310,7 @@ window#waybar {
     margin-top: 10px;
     margin-left: 8px;
     padding-right: 4px;
-    background: #1e1e2e; 
+    background: #1e1e2e;
     border-bottom: 3px;
     border-style: solid;
     border-color: #1e1e2e;
@@ -337,7 +338,7 @@ window#waybar {
     margin-bottom: 0px;
     border-radius: 10px;
     transition: none;
-    background: #1e1e2e; 
+    background: #1e1e2e;
     color: #cba6f7;
     border-bottom: 3px;
     border-style: solid;
@@ -352,10 +353,44 @@ window#waybar {
     margin-bottom: 0px;
     border-radius: 10px;
     transition: none;
-    background: #1e1e2e; 
+    background: #1e1e2e;
     color: #cba6f7;
     border-bottom: 3px;
     border-style: solid;
     border-color: #cba6f7;
     transition: 0.3s;
+}
+
+#mpris {
+  background: #1e1e2e;
+  color: #cba6f7;
+  border-radius: 10px;
+  padding: 0 10px;
+  margin-top: 10px;
+  margin-left: 8px;
+  border-bottom: 3px solid #1e1e2e;
+  transition: 0.3s;
+}
+#mpris:hover {
+  background: #cba6f7;
+  color: #1e1e2e;
+}
+
+#window {
+  background-color: #1e1e2e;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 15px;
+  font-weight: bold;
+  padding: 0 10px;
+  border-radius: 10px;
+  margin: 10px 8px 0px 8px;
+  border-bottom: 3px solid #1e1e2e;
+  min-width: 200px;
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+#window:hover {
+  background: #cba6f7;
+  color: #1e1e2e;
 }
