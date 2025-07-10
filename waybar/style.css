@@ -1,10 +1,14 @@
 * {
 	border: none;
 	border-radius: 10;
-        font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
+    font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
 	font-size: 15px;
 	font-weight: bold;
 	min-height: 10px;
+}
+
+window#waybar {
+	background: transparent;
 }
 
 #network {
@@ -383,11 +387,31 @@
   margin: 10px 8px 0px 8px;
   border-bottom: 3px solid #1e1e2e;
   min-width: 200px;
-  color: #ffffff;
   transition: 0.3s;
 }
 
 #window:hover {
   background: #cba6f7;
+  color: #1e1e2e;
+}
+
+
+#custom-bluetooth {
+  background-color: #1e1e2e;
+  color: #cba6f7;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-left: 8px;
+  border-bottom: 3px solid #1e1e2e;
+  transition: 0.3s;
+}
+
+#custom-bluetooth:hover {
+  background-color: #cba6f7;
   color: #1e1e2e;
 }
