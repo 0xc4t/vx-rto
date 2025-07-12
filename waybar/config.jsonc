@@ -55,8 +55,7 @@
     "custom/launcher": {
         "markup": "pango",
         "format": "<span color='#cba6f7'>󰄛 </span>",
-        "on-click": "wofi --show drun",
-        "on-click-right": "killall rofi",
+        "on-click": "swaync-client -t -sw",
         "tooltip": false
     },
 
@@ -71,11 +70,12 @@
     "clock": {
         "markup": "pango",
         "format": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{:%A - %B %d, %Y - %R}</span>",
-        "tooltip": false
+        "tooltip": false,
     },
 
     "hyprland/workspaces": {
         "format": "{icon}",
+        "warp-on-scroll": false,
         "tooltip": true,
         "format-icons": {
             "1": "", "2": "", "3": "", "4": "", "5": "",
@@ -128,7 +128,7 @@
         "tooltip": false
     },
     "custom/bluetooth": {
-        "format": "",
+        "format": "󰂱",
         "tooltip": false,
         "on-click": "blueman-manager",
         "on-click-right": "bluetoothctl power off",
