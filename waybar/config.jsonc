@@ -1,6 +1,6 @@
 {
     "layer": "bottom",
-    "modules-left": ["custom/launcher","custom/bluetooth","clock","mpris","hyprland/workspaces"],
+    "modules-left": ["custom/launcher","clock","mpris","hyprland/workspaces"],
     "modules-center":["hyprland/window"],
     "modules-right": ["cpu", "memory", "disk", "pulseaudio", "battery", "network", "custom/power"],
 
@@ -8,7 +8,7 @@
         "tooltip": false,
         "scroll-step": 1,
         "markup": "pango",
-        "format": "<span color='#cba6f7'>{icon} </span> <span color='#cdd6f4'>{volume}%</span>",
+        "format": "<span color='#cba6f7'>{icon}</span> <span color='#cdd6f4'> {volume}%</span>",
         "format-muted": "<span color='#cba6f7'>ﱝ</span> <span color='#cdd6f4'>muted</span>",
         "on-click": "pavucontrol",
         "format-icons": {
@@ -20,7 +20,7 @@
     "markup": "pango",
     "format": "<span color='#cba6f7'>{icon} </span> <span color='#cdd6f4'>{capacity}%</span>",
     "format-charging": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{capacity}%</span>",
-    "format-full": "<span color='#cba6f7'></span> <span color='#cba6f7'></span> <span color='#cdd6f4'>Charged</span>",
+    "format-full": "<span color='#cba6f7'></span> <span color='#cba6f7'></span> <span color='#cdd6f4'>Charged</span>",
     "format-time": "{H}h{M}m",
     "format-icons": ["", "", "", "", ""],
     "interval": 1,
@@ -54,8 +54,8 @@
 
     "custom/launcher": {
         "markup": "pango",
-        "format": "<span color='#cba6f7'>󰄛 </span>",
-        "on-click": "swaync-client -t -sw",
+        "format": "<span color='#cba6f7'> </span>",
+        "on-click": "wofi --show drun",
         "tooltip": false
     },
 
@@ -98,7 +98,7 @@
     "network": {
         "markup": "pango",
         "interface": "wlan0",
-        "format-wifi": "<span color='#cba6f7'>󰘊</span> <span color='#cdd6f4'>{essid}</span> <span color='#cdd6f4'>{ipaddr}</span>",
+        "format-wifi": "<span color='#cba6f7'>󰖩</span> <span color='#cdd6f4'>{essid}</span> <span color='#cdd6f4'>{ipaddr}</span>",
         "format-ethernet": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{ipaddr}</span> <span color='#cdd6f4'></span>",
         "format-disconnected": "<span color='#cba6f7'>󰘚</span> <span color='#cdd6f4'>disconnected</span>",
         "tooltip": true,
@@ -126,14 +126,7 @@
       },
         "max-length": 25,
         "tooltip": false
-    },
-    "custom/bluetooth": {
-        "format": "󰂱",
-        "tooltip": false,
-        "on-click": "blueman-manager",
-        "on-click-right": "bluetoothctl power off",
-        "interval": 30
-}
+    }
 
 
 }
