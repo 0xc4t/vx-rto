@@ -1,7 +1,7 @@
 * {
 	border: none;
 	border-radius: 10;
-    font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
+        font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
 	font-size: 15px;
 	font-weight: bold;
 	min-height: 10px;
@@ -17,61 +17,13 @@ window#waybar {
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 0px;
-    border-radius: 10px;
+    border-radius: 18px;
     transition: none;
-    background: #1e1e2e;
+    background: #232136;
     color: #cba6f7;
-    border-bottom: 3px;
-    border-style: solid;
-    border-color: #1e1e2e;
     transition: 0.3s;
 }
 
-#network:hover {
-    color: #1e1e2e;
-    background: #cba6f7;
-}
-
-#custom-keybinds {
-    margin-top: 10px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    color: #cba6f7;
-    background: #1e1e2e;
-    transition: 0.3s;
-    border-bottom: 3px;
-    border-style: solid;
-    border-color: #1e1e2e;
-}
-#custom-keybinds:hover {
-    background: #cba6f7;
-    color: #32111C;
-}
-
-#cava{
-    margin-top: 10px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    background: #1e1e2e;
-    color: #cba6f7;
-    border-bottom: 3px;
-    border-style: solid;
-    border-color: #1e1e2e;
-    transition: 0.3s;
-}
-
-#cava:hover{
-    color: #32111C;
-    background: #EF3946;
-}
 
 #battery{
     margin-top: 10px;
@@ -79,20 +31,13 @@ window#waybar {
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 0px;
-    border-radius: 10px;
+    border-radius: 18px;
     transition: none;
-    background: #1e1e2e;
+    background: #232136;
     color: #cba6f7;
-    border-bottom: 3px;
-    border-style: solid;
-    border-color: #1e1e2e;
     transition: 0.3s;
 }
 
-#battery:hover{
-    color: #1e1e2e;
-    background: #cba6f7;
-}
 
 
 #pulseaudio {
@@ -101,84 +46,59 @@ window#waybar {
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 0px;
-    border-radius: 10px;
+    border-radius: 18px;
     transition: none;
-    background: #1e1e2e;
+    background: #232136;
     color: #cba6f7;
     padding: 8px;
-    border-bottom: 3px;
-    border-style: solid;
-    border-color: #1e1e2e;
     transition: 0.3s;
 }
-#pulseaudio:hover{
-    background: #cba6f7;
-    color: #32111C;
-}
+
 #pulseaudio.muted {
     color: #cba6f7;
-    background: #1e1e2e;
+    background: #232136;
     border-bottom: 3px;
     border-style: solid;
     border-color: #cba6f7;
     transition: 0.3s;
 }
-#pulseaudio.muted:hover {
-    background: #cba6f7;
-    color: #32111C;
 
-}
 #clock {
     margin-top: 10px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 0px;
-    border-radius: 10px;
+    border-radius: 18px;
     transition: none;
-    background: #1e1e2e;
+    background: #232136;
     color: #cba6f7;
-    border-bottom: 3px;
-    border-style: solid;
-    border-color: #1e1e2e;
     transition: 0.3s;
 }
-#clock:hover {
-    color: #32111C;
-    background: #cba6f7;
-}
+
 #disk{
     margin-top: 10px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 0px;
-    border-radius: 10px;
+    border-radius: 18px;
     transition: none;
-    background: #1e1e2e;
+    background: #232136;
     color: #cba6f7;
-    border-bottom: 3px;
-    border-style: solid;
-    border-color: #1e1e2e;
     transition: 0.3s;
 }
-#disk:hover{
-    color: #32111C;
-    background: #cba6f7;
-}
+
 #privacy{
     margin-top: 10px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 0px;
-    border-radius: 10px;
+    border-radius: 18px;
     transition: none;
-    background: #1e1e2e;
+    background: #232136;
     color: #cba6f7;
-    border-bottom: 3px;
-    border-style: solid;
-    border-color: #1e1e2e;
     transition: 0.3s;
 }
 #idle_inhibitor{
@@ -187,13 +107,10 @@ window#waybar {
     padding-left: 15px;
     padding-right: 15px;
     margin-bottom: 0px;
-    border-radius: 10px;
+    border-radius: 18px;
     transition: none;
-    background: #1e1e2e;
+    background: #232136;
     color: #FEE5E4;
-    border-bottom: 3px;
-    border-style: solid;
-    border-color: #1e1e2e;
     transition: 0.3s;
 }
 #idle_inhibitor.activated{
@@ -202,14 +119,14 @@ window#waybar {
 }
 #idle_inhibitor.activated:hover{
     background: #EF3946;
-    color: #32111C;
+    color: #1e1e2e;
     border-color: #EF3946;
 }
 #idle_inhibitor.deactivated{
     color: #FEE5E4
 }
 #idle_inhibitor.deactivated:hover{
-    color: #32111C;
+    color: #1e1e2e;
     background: #EF3946;
 }
 
@@ -219,70 +136,50 @@ window#waybar {
     padding-left: 10px;
     margin-bottom: 0px;
     padding-right: 10px;
-    border-radius: 10px;
+    border-radius: 18px;
     transition: none;
-    background: #1e1e2e;
+    background: #232136;
     color: #cba6f7;
-    border-bottom: 3px;
-    border-style: solid;
-    border-color: #1e1e2e;
     transition: 0.3s;
 }
 
-#memory:hover {
-    color: #32111C;
-    background: #cba6f7;
 
-}
 #cpu {
     margin-top: 10px;
     margin-left: 8px;
     padding-left: 10px;
     margin-bottom: 0px;
     padding-right: 10px;
-    border-radius: 10px;
+    border-radius: 18px;
     transition: none;
-    background: #1e1e2e;
+    background: #232136;
     color: #cba6f7;
-    border-bottom: 3px;
-    border-style: solid;
-    border-color: #1e1e2e;
     transition: 0.3s;
 }
-#cpu:hover {
-    color: #32111C;
-    background: #cba6f7;
 
-}
 #custom-launcher {
     font-size: 20px;
     margin-top: 10px;
     margin-left: 17px;
     padding-left: 10px;
     padding-right: 5px;
-    border-radius: 10px;
+    border-radius: 18px;
     transition: none;
     color: #cba6f7;
-    background: #1e1e2e;
+    background: #232136;
     transition: 0.3s;
-    border-bottom: 3px;
-    border-style: solid;
-    border-color: #1e1e2e;
 }
-#custom-launcher:hover {
-    background: #cba6f7;
-    color: #32111C;
-}
+
 #network.disconnected {
     color: #FEE5E4;
-    background: #32111C;
+    background: #1e1e2e;
     border-bottom: 3px;
     border-style: solid;
     border-color: #EF3946;
 }
 #network.disconnected:hover {
     background: #EF3946;
-    color: #32111C;
+    color: #1e1e2e;
 }
 #custom-power {
     font-size: 15px;
@@ -292,18 +189,15 @@ window#waybar {
     padding-left: 10px;
     padding-right: 5px;
     margin-bottom: 0px;
-    border-radius: 10px;
+    border-radius: 18px;
     transition: none;
-    background: #1e1e2e;
+    background: #232136;
     color: #cba6f7;
-    border-bottom: 3px;
-    border-style: solid;
-    border-color: #1e1e2e;
     transition: 0.3s;
 }
 #custom-power:hover {
     background: #cba6f7;
-    color: #32111C;
+    color: #1e1e2e;
     border-color: #cba6f7;
 
 }
@@ -311,10 +205,8 @@ window#waybar {
     margin-top: 10px;
     margin-left: 8px;
     padding-right: 4px;
-    background: #1e1e2e;
-    border-bottom: 3px;
-    border-style: solid;
-    border-color: #1e1e2e;
+    background: #232136;
+    border-radius: 18px;
     color: #cba6f7;
     transition: 0.3s;
 }
@@ -337,13 +229,10 @@ window#waybar {
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 0px;
-    border-radius: 10px;
+    border-radius: 18px;
     transition: none;
-    background: #1e1e2e;
+    background: #232136;
     color: #cba6f7;
-    border-bottom: 3px;
-    border-style: solid;
-    border-color: #1e1e2e;
     transition: 0.3s;
 }
 #tray menu{
@@ -352,9 +241,9 @@ window#waybar {
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 0px;
-    border-radius: 10px;
+    border-radius: 18px;
     transition: none;
-    background: #1e1e2e;
+    background: #232136;
     color: #cba6f7;
     border-bottom: 3px;
     border-style: solid;
@@ -363,55 +252,30 @@ window#waybar {
 }
 
 #mpris {
-  background: #1e1e2e;
+  background: #232136;
   color: #cba6f7;
-  border-radius: 10px;
+  border-radius: 18px;
   padding: 0 10px;
   margin-top: 10px;
   margin-left: 8px;
-  border-bottom: 3px solid #1e1e2e;
+  border-bottom: 3px solid #232136;
   transition: 0.3s;
-}
-#mpris:hover {
-  background: #cba6f7;
-  color: #1e1e2e;
 }
 
 #window {
-  background-color: #1e1e2e;
+  background-color: #232136;
   font-family: "JetBrainsMono Nerd Font";
   font-size: 15px;
   font-weight: bold;
   padding: 0 10px;
-  border-radius: 10px;
+  border-radius: 18px;
   margin: 10px 8px 0px 8px;
-  border-bottom: 3px solid #1e1e2e;
+  border-bottom: 3px solid #232136;
   min-width: 200px;
   transition: 0.3s;
 }
 
-#window:hover {
-  background: #cba6f7;
-  color: #1e1e2e;
-}
 
-
-#custom-bluetooth {
-  background-color: #1e1e2e;
-  color: #cba6f7;
-  font-family: "JetBrainsMono Nerd Font";
-  font-size: 16px;
-  font-weight: bold;
-  padding: 0 10px;
-  border-radius: 10px;
-  margin-top: 10px;
-  margin-bottom: 0px;
-  margin-left: 8px;
-  border-bottom: 3px solid #1e1e2e;
-  transition: 0.3s;
-}
-
-#custom-bluetooth:hover {
-  background-color: #cba6f7;
-  color: #1e1e2e;
+#cpu, #memory, #disk, #battery, #pulseaudio, #clock, #custom-power, #custom-launcher, #tray, #network, #privacy, #cava, #idle_inhibitor, #mpris, #window, #workspaces {
+    border: 2px solid #363a4f;
 }
