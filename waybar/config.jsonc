@@ -19,7 +19,7 @@
 "battery": {
     "markup": "pango",
     "format": "<span color='#cba6f7'>{icon} </span> <span color='#cdd6f4'>{capacity}%</span>",
-    "format-charging": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{capacity}%</span>",
+    "format-charging": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{capacity}%</span>",
     "format-full": "<span color='#cba6f7'></span> <span color='#cba6f7'></span> <span color='#cdd6f4'>Charged</span>",
     "format-time": "{H}h{M}m",
     "format-icons": ["", "", "", "", ""],
