@@ -9,7 +9,7 @@
         "scroll-step": 1,
         "markup": "pango",
         "format": "<span color='#cba6f7'>{icon}</span> <span color='#cdd6f4'> {volume}%</span>",
-        "format-muted": "<span color='#cba6f7'>ﱝ</span> <span color='#cdd6f4'>muted</span>",
+        "format-muted": "<span color='#cba6f7'></span> <span color='#cdd6f4'> Muted</span>",
         "on-click": "pavucontrol",
         "format-icons": {
             "default": ["", "", ""]
@@ -48,7 +48,7 @@
     "memory": {
         "markup": "pango",
         "interval": 30,
-        "format": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{}%</span>",
+        "format": "<span color='#cba6f7'></span> <span color='#cdd6f4'> {}%</span>",
         "max-length": 10
     },
 
