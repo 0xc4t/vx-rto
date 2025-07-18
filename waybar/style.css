@@ -87,35 +87,6 @@ window#waybar {
 }
 
 
-#idle_inhibitor{
-    margin-top: 10px;
-    margin-left: 8px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-bottom: 0px;
-    border-radius: 15px;
-    transition: none;
-    background: #1e1e2e;
-    color: #FEE5E4;
-    transition: 0.3s;
-}
-#idle_inhibitor.activated{
-    color: #FEE5E4;
-    border-color: #EF3946;
-}
-#idle_inhibitor.activated:hover{
-    background: #EF3946;
-    color: #1e1e2e;
-    border-color: #EF3946;
-}
-#idle_inhibitor.deactivated{
-    color: #FEE5E4
-}
-#idle_inhibitor.deactivated:hover{
-    color: #1e1e2e;
-    background: #EF3946;
-}
-
 #memory {
     margin-top: 10px;
     margin-left: 8px;
@@ -206,33 +177,6 @@ window#waybar {
     text-shadow: none;
 }
 
-#tray{
-    margin-top: 10px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 15px;
-    transition: none;
-    background: #1e1e2e;
-    color: #cba6f7;
-    transition: 0.3s;
-}
-#tray menu{
-    margin-top: 10px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 15px;
-    transition: none;
-    background: #1e1e2e;
-    color: #cba6f7;
-    border-bottom: 3px;
-    border-style: solid;
-    border-color: #cba6f7;
-    transition: 0.3s;
-}
 
 #mpris {
   background: #1e1e2e;
@@ -257,6 +201,17 @@ window#waybar {
   min-width: 200px;
   transition: 0.3s;
 }
+
+
+tooltip {
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    border: 2px solid #cba6f7;
+    border-radius: 10px;
+    padding: 5px;
+    font-family: JetBrainsMono Nerd Font;
+}
+
 
 
 #cpu, #memory, #disk, #battery, #pulseaudio, #clock, #custom-power, #custom-launcher, #tray, #network, #privacy, #cava, #idle_inhibitor, #mpris, #window, #workspaces {
