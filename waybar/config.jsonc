@@ -90,11 +90,6 @@
         }
     },
 
-    "tray": {
-        "icon-size": 21,
-        "spacing": 10
-    },
-
     "network": {
         "markup": "pango",
         "interface": "wlan0",
