@@ -20,7 +20,7 @@
     "markup": "pango",
     "format": "<span color='#cba6f7'>{icon} </span> <span color='#cdd6f4'>{capacity}%</span>",
     "format-charging": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{capacity}%</span>",
-    "format-full": "<span color='#cba6f7'></span> <span color='#cba6f7'></span> <span color='#cdd6f4'>Charged</span>",
+    "format-full": "<span color='#cba6f7'></span> <span color='#cba6f7'></span> <span color='#cdd6f4'>Fully</span>",
     "format-time": "{H}h{M}m",
     "format-icons": ["", "", "", "", ""],
     "interval": 1,
@@ -34,7 +34,7 @@
     "disk": {
         "markup": "pango",
         "interval": 30,
-        "format": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{percentage_used}%</span>",
+        "format": "<span color='#cba6f7'>󰋊</span> <span color='#cdd6f4'>{percentage_used}%</span>",
         "path": "/"
     },
 
@@ -63,14 +63,14 @@
         "markup": "pango",
         "format": "<span color='#cba6f7'>⏻ </span>",
         "tooltip": false,
-        "on-click": "bash ~/.config/rofi/powermenu.sh",
+        "on-click": "wlogout",
         "on-click-right": "killall rofi"
     },
 
     "clock": {
         "markup": "pango",
         "format": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{:%A - %B %d, %Y - %R}</span>",
-        "tooltip": false,
+        "tooltip": false
     },
 
     "hyprland/workspaces": {
