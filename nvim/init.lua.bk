@@ -1,0 +1,175 @@
+vim.cmd("set expandtab") 
+vim.cmd("set tabstop=2")
+vim.cmd("set softtabstop=2")
+vim.cmd("set shiftwidth=2")
+vim.g.mapleader= " "
+vim.cmd("set relativenumber!")
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", 
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+local opts = {}
+local plugins = {
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  { "nvim-telescope/telescope.nvim", tag = "0.1.8", dependencies = { "nvim-lua/plenary.nvim" }},
+  { "nvim-treesitter/nvim-treesitter", build= ":TSUpdate" },
+
+  -- Barbecue + dependencies
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional but recommended
+    },
+    opts = {
+      create_autocmd = true,
+      attach_navic = true,
+    },
+  },
+
+  -- Alpha (Dashboard)
+  {
+    "goolord/alpha-nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      local alpha = require("alpha")
+      local dashboard = require("alpha.themes.dashboard")
+
+      dashboard.section.header.val = {
+        "                         ",
+        " ▗▄▖             ▗▄      ",
+        " █▀█             ▟█  ▐▌  ",
+        "▐▌ ▐▌▝█ █▘ ▟██▖ ▐▘█ ▐███ ",
+        "▐▌█▐▌ ▐█▌ ▐▛  ▘▗▛ █  ▐▌  ",
+        "▐▌ ▐▌ ▗█▖ ▐▌   ▐███▌ ▐▌  ",
+        " █▄█  ▟▀▙ ▝█▄▄▌   █  ▐▙▄ ",
+        " ▝▀▘ ▝▀ ▀▘ ▝▀▀    ▀   ▀▀ ",
+        "                         ",
+        "                         ",
+      }
+
+
+      dashboard.section.buttons.val = {
+	dashboard.button("n", "  New file", ":ene <BAR> startinsert<CR>"),
+        dashboard.button("f", "  Find file", ":Telescope find_files<CR>"),
+        dashboard.button("g", "󰈞  Live grep", ":Telescope live_grep<CR>"),
+        dashboard.button("r", "  Recent files", ":Telescope oldfiles<CR>"),
+        dashboard.button("q", "  Quit", ":qa<CR>"),
+      }
+
+      dashboard.section.footer.val = "Emulate. Exploit. Evade. Pivot"
+      dashboard.section.buttons.opts.spacing = 0	
+      alpha.setup(dashboard.opts)
+    end,
+  },
+
+
+
+  -- === Autocompletion + LSP ===
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
+    },
+  },
+  { "neovim/nvim-lspconfig" },
+}
+
+vim.keymap.set("n", "<C-z>", "u", { noremap = true, silent = true, desc = "Undo" })
+vim.keymap.set("n", "<C-y>", "<C-r>", { noremap = true, silent = true, desc = "Redo" })
+vim.keymap.set("n", "<C-l>", ":vsplit<CR>", { noremap = true, silent = true, desc = "Vertical Split" })
+vim.keymap.set("n", "<C-Left>", "<C-w>h", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-Right>", "<C-w>l", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-Down>", "<C-w>j", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-Up>", "<C-w>k", { noremap = true, silent = true })
+
+
+require("lazy").setup(plugins, opts)
+
+-- Treesitter setup
+local config = require("nvim-treesitter.configs")
+config.setup({
+  ensure_installed = { "lua", "javascript", "python", "cpp" },
+  highlight = { enable = true },
+  indent = { enable = true }
+})
+
+-- Telescope mappings
+local builtin = require("telescope.builtin") 
+vim.keymap.set("n", "<C-p>", builtin.find_files, {})
+vim.keymap.set("n","<leader>fg", builtin.live_grep, {})
+
+-- Telescope border warna mauve
+vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "#cba6f7", bg = "NONE" })
+vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = "#cba6f7", bg = "NONE" })
+vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { fg = "#cba6f7", bg = "NONE" })
+vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = "#cba6f7", bg = "NONE" })
+
+-- Theme
+require("catppuccin").setup()
+vim.cmd.colorscheme "catppuccin"
+
+-- ========== Autocompletion (nvim-cmp) ==========
+local cmp = require("cmp")
+local luasnip = require("luasnip")
+
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
+  mapping = cmp.mapping.preset.insert({
+    ["<C-Space>"] = cmp.mapping.complete(),
+    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    ["<Tab>"] = cmp.mapping.select_next_item(),
+    ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+  }),
+  sources = cmp.config.sources({
+    { name = "nvim_lsp" },
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "path" },
+  }),
+})
+
+-- ========== LSP Config ==========
+local lspconfig = require("lspconfig")
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+lspconfig.clangd.setup({
+  capabilities = capabilities,
+  cmd = { "clangd", "--query-driver=/usr/bin/x86_64-w64-mingw32-g++" },
+  -- optional: path tambahan header WinAPI
+  init_options = {
+    compilationDatabasePath = "./",
+  },
+})
+
+
+
+-- Lua
+lspconfig.lua_ls.setup({
+  capabilities = capabilities,
+})
+
+-- Python
+lspconfig.pyright.setup({
+  capabilities = capabilities,
+})
