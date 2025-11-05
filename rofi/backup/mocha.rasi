@@ -1,22 +1,27 @@
+// define colors etc.
 * {
     bg: #1e1e2e;
-    hv: #cdd6f4;
-    primary: #cdd6f4;
-    ug: #cdd6f4;
-    font: "Jetbrains Mono Nerd Font 13";
+    hv: #cba6f7; 
+    primary: #cba6f7; 
+    ug: #cba6f7;
+    font: "Jetbrains Mono Nerd Font 12";
     background-color: @bg;
-    kl: #cdd6f4;
+    //dark: @bg;
+    kl: #cba6f7;
     black: #000000;
+
     transparent: rgba(46,52,64,0);
 }
 
+// defines different aspects of the window
 window {
-    width: 400;
+    width: 700;
     //height: 500;
+
     orientation: horizontal;
     location: center;
     anchor: center;
-    border-color: #1e1e2e;
+    border-color: #1e1e2e;  
     border-radius: 7px;
     spacing: 0;
     children: [ mainbox ];
@@ -31,7 +36,7 @@ inputbar {
     color: @kl;
     padding: 11px;
     border: 3px 3px 2px 3px;
-    border-color: #2a273f;
+    border-color: #cba6f7;
     border-radius: 6px 6px 0px 0px;
 }
 
@@ -60,9 +65,9 @@ listview {
     padding: 8px;
     lines: 12;
     columns: 1;
-    border: 0px 3px 3px 3px;
+    border: 0px 3px 3px 3px; 
     border-radius: 0px 0px 6px 6px;
-    border-color: #2a273f;
+    border-color: #cba6f7;
     dynamic: false;
 }
 
@@ -71,7 +76,6 @@ element {
     vertical-align: 1;
     color: @kl;
     font: inherit;
-    padding: 5px 10px;
 }
 
 element-text {
@@ -120,4 +124,4 @@ button selected normal {
 
 scrollbar {
     enabled: true;
-}
+} 

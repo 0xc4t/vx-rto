@@ -1,0 +1,128 @@
+* {
+	border: none;
+    font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+
+}
+
+window#waybar {
+	background: transparent;
+}
+
+#network {
+    margin-top: 10px;
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4.5pt;
+    border-radius: 6px;
+    background: #1e1e2e;
+    color: #cdd6f4;
+    transition: 0.3s;
+}
+
+
+#battery{
+    margin-top: 10px;
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4.5pt;
+    border-radius: 6px;
+    background: #1e1e2e;
+    color: #cdd6f4;
+    transition: 0.3s;
+}
+
+
+#pulseaudio {
+    margin-top: 10px;
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4.5pt;
+    border-radius: 6px;
+    background: #1e1e2e;
+    color: #cdd6f4;
+    transition: 0.3s;
+}
+
+#pulseaudio.muted {
+    color: #cdd6f4;
+    background: #1e1e2e;
+    transition: 0.3s;
+}
+
+#clock {
+    margin-top: 10px;
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4.5pt;
+    border-radius: 6px;
+    background: #1e1e2e;
+    color: #cdd6f4;
+    transition: 0.3s;
+}
+
+
+#network.disconnected {
+    color: #FEE5E4;
+    background: #1e1e2e;
+    border-bottom: 3px;
+    border-style: solid;
+    border-color: #EF3946;
+}
+
+#custom-power {
+    font-size: 15px;
+    margin-top: 10px;
+    margin-left: 8px;
+    margin-right: 17px;
+    padding-left: 10px;
+    padding-right: 5px;
+    border-radius: 4.5pt;
+    border-radius: 6px;
+    background: #1e1e2e;
+    color: #cdd6f4;
+    transition: 0.3s;
+}
+#custom-power:hover {
+    background: #cdd6f4;
+    color: #1e1e2e;
+    border-color: #cdd6f4;
+
+}
+#workspaces {
+    margin-top: 10px;
+    margin-left: 5px;
+    padding-right: 4px;
+    background: #1e1e2e;
+    border-radius: 4.5pt;
+    border-radius: 6px;
+    color: #cdd6f4;
+    transition: 0.3s;
+}
+
+#workspaces button {
+    color: #cdd6f4;
+    transition: 0.3s;
+}
+
+#workspaces button:hover {
+    background: transparent;
+    color: transparent;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+
+tooltip {
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    border: 2px solid #cdd6f4;
+    border-radius: 10px;
+    padding: 5px;
+    font-family: JetBrainsMono Nerd Font;
+}

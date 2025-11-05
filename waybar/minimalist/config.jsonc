@@ -1,0 +1,125 @@
+{
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "top",
+  "spacing": 0,
+  "height": 26,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "battery",
+    "pulseaudio",
+    "cpu",
+    "network",
+    "custom/power"
+  ],
+
+
+  "hyprland/workspaces": {
+    "markup": "pango",
+    "format": "{icon}",
+    "warp-on-scroll": false,
+    "tooltip": true,
+    "format-icons": {
+      "1": "<span color='#cdd6f4'>●</span>",
+      "2": "<span color='#cdd6f4'>●</span>",
+      "3": "<span color='#cdd6f4'>●</span>",
+      "4": "<span color='#cdd6f4'>●</span>",
+      "5": "<span color='#cdd6f4'>●</span>",
+      "6": "<span color='#cdd6f4'>●</span>",
+      "7": "<span color='#cdd6f4'>●</span>",
+      "8": "<span color='#cdd6f4'>●</span>",
+      "9": "<span color='#cdd6f4'>●</span>",
+      "10": "<span color='#cdd6f4'>●</span>",
+      "urgent": "<span color='#f38ba8'>●</span>",
+      "active": "<span color='#bb9af7'><b>●</b></span>",
+      "default": "<span color='#cdd6f4'>●</span>"
+    },
+    "persistent_workspaces": {
+      "outputs": ["*"],
+      "workspaces": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    }
+  },
+
+  "cpu": {
+    "markup": "pango",
+    "interval": 15,
+    "format": "<span color='#cdd6f4' size='13pt'></span>",
+    "max-length": 10
+  },
+
+  "clock": {
+    "markup": "pango",
+    "format": "<span color='#cdd6f4'>{:%b %d / %I:%M %p}</span>",
+    "on-click": "swaync-client -t",
+    "tooltip": false
+  },
+
+  "network": {
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰀂",
+    "format-disconnected": "󰖪",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 3,
+    "spacing": 1,
+    "on-click": "alacritty --class=Impala -e impala"
+  },
+
+  "battery": {
+    "markup": "pango",
+    "format": "<span color='#cdd6f4' size='13pt'>{icon}</span>",
+    "format-charging": "<span color='#cdd6f4' size='13pt'></span>",
+    "format-full": "<span color='#cdd6f4' size='13pt'></span>",
+    "format-time": "{H}h{M}m",
+    "format-icons": ["","","","",""],
+    "interval": 1,
+    "states": {
+      "warning": 25,
+      "critical": 10
+    },
+    "tooltip": false,
+    "on-click": ""
+  },
+
+  "pulseaudio": {
+    "format": "{icon}",
+    "on-click": "alacritty --class=Wiremix -e wiremix",
+    "on-click-right": "pamixer -t",
+    "tooltip-format": "Playing at {volume}%",
+    "scroll-step": 5,
+    "format-muted": "󰝟",
+    "format-icons": {
+      "default": ["", "", ""]
+    }
+  },
+
+  "custom/power": {
+    "markup": "pango",
+    "format": "<span color='#cba6f7' size='13pt'>  </span>",
+    "tooltip": false,
+    "on-click": "$HOME/.config/hypr/powermenu/powermenu.sh",
+  },
+    "custom/bluetooth": {
+        "markup": "pango",
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/bluetooth.sh",
+        "interval": 5,
+        "on-click": "blueman-manager"
+    },
+
+
+
+  "tray": {
+    "icon-size": 12,
+    "spacing": 12
+  }
+}
+

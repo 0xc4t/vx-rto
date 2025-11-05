@@ -11,18 +11,18 @@
 }
 
 .control-center {
-    background-color: alpha(@background, 0.8);
+    background-color: alpha(@background, 1.0);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.65);
     padding: 5px;
 }
 
 .control-center .notification-row .notification-background {
-    border-radius: 15px;
+    border-radius: 12px;
     margin-top: 5px;
 }
 
 .notification {
-    background-color: alpha(@background, 0.8);
+    background-color: @background;
 }
 
 .notification > *:last-child > *  {
@@ -52,7 +52,7 @@
 }
 .notification.low,
 .notification.normal  {
-    background-color: alpha(@background, 0.5);
+    background-color: alpha(@background, 1.0);
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.65);
 }
 
@@ -107,7 +107,7 @@ tooltip {
 }
 .widget-buttons-grid > flowbox > flowboxchild > button {
     background: @gray;
-    box-shadow: 0px 0px 10px alpha(@background, 0.8);
+    box-shadow: 0px 0px 10px alpha(@background, 1.0);
     border-radius: 12px;
     min-width: 60px;
     min-height: 30px;
@@ -128,32 +128,6 @@ tooltip {
 /* Mpris widget */
 @define-color mpris-album-art-overlay rgba(0, 0, 0, 0.55);
 @define-color mpris-button-hover rgba(0, 0, 0, 0.5);
-
-.widget-mpris .widget-mpris-player {
-    padding: 16px;
-    margin: 16px 20px;
-    background-color: @mpris-album-art-overlay;
-    border-radius: 12px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.65);
-}
-.widget-mpris .widget-mpris-player .widget-mpris-album-art {
-    border-radius: 12px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.65);
-}
-.widget-mpris .widget-mpris-player .widget-mpris-title {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin: 0px 8px 8px 8px;
-}
-.widget-mpris .widget-mpris-player .widget-mpris-subtitle {
-    font-size: 1rem;
-}
-.widget-mpris .widget-mpris-player > box > button:hover {
-    background-color: @mpris-button-hover;
-}
-.widget-mpris > box > button:hover {
-    background: alpha(@select, 0.6);
-}
 
 /* Volume widget */
 .widget-volume {

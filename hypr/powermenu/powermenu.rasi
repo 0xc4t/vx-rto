@@ -1,0 +1,69 @@
+configuration {
+    location:                       0;
+    font:                           "JetBrainsMono Nerd Font 13";
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+  background: #181825;
+  background-alt: #181825;
+  line: #44475a;
+  foreground: #f8f8f2;
+  foreground-alt: #f8f8f2;
+  Comment: #6272a4;
+  selected: #b4befe;
+  Pink: #b4befe;
+  Purple: #b4befe;
+  background-color: @background;
+  text-color: @Purple;
+}
+
+
+window {
+    background-color:               @background;
+    border:                         2px;
+    border-color:                   #2a273f;
+    border-radius:                  20px;
+    width:                          400px;
+    height:                         130px;
+}
+
+listview {
+    background-color:               @background;
+    columns:                        1;
+    lines:                          5;
+    spacing:                        50px;
+    layout:                         horizontal;
+}
+
+mainbox {
+    background-color:               @background;
+    children:                       [ listview ];
+    padding:                        40px;
+}
+
+element {
+    background-color:               @background;
+    text-color:                     @line;
+    orientation:                    horizontal;
+}
+
+element-text {
+    background-color:               inherit;
+    text-color:                     inherit;
+    font:                           "JetBrainsMono Nerd Font 25";
+    expand:                         false;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    margin:                         0px;
+}
+
+element selected {
+    background-color:               @background;
+    text-color:                     @Purple;
+    border:                         0px;
+    border-color:                   @selected;
+}

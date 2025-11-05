@@ -1,0 +1,122 @@
+{
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "top",
+  "spacing": 0,
+  "height": 26,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "custom/bluetooth",
+    "pulseaudio",
+    "cpu",
+    "battery",
+    "network",
+    "custom/power"
+  ],
+
+
+  "hyprland/workspaces": {
+    "markup": "pango",
+    "format": "{icon}",
+    "warp-on-scroll": false,
+    "tooltip": true,
+    "format-icons": {
+      "1": "<span color='#cdd6f4'>●</span>",
+      "2": "<span color='#cdd6f4'>●</span>",
+      "3": "<span color='#cdd6f4'>●</span>",
+      "4": "<span color='#cdd6f4'>●</span>",
+      "5": "<span color='#cdd6f4'>●</span>",
+      "6": "<span color='#cdd6f4'>●</span>",
+      "7": "<span color='#cdd6f4'>●</span>",
+      "8": "<span color='#cdd6f4'>●</span>",
+      "9": "<span color='#cdd6f4'>●</span>",
+      "10": "<span color='#cdd6f4'>●</span>",
+      "urgent": "<span color='#f38ba8'>●</span>",
+      "active": "<span color='#cba6f7'><b>●</b></span>",
+      "default": "<span color='#cdd6f4'>●</span>"
+    },
+    "persistent_workspaces": {
+      "outputs": ["*"],
+      "workspaces": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    }
+  },
+
+  "cpu": {
+    "markup": "pango",
+    "interval": 15,
+    "format": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{}%</span>",
+    "max-length": 10
+  },
+
+  "clock": {
+    "markup": "pango",
+    "format": "<span color='#cdd6f4'>{:%b %d / %I:%M %p}</span>",
+    "on-click": "swaync-client -t",
+    "tooltip": false
+  },
+
+  "network": {
+    "markup": "pango",
+    "interface": "wlan0",
+    "format-wifi": "<span color='#cba6f7'>󰖩</span> <span color='#cdd6f4'>{essid}</span> <span color='#cdd6f4'>{ipaddr}</span>",
+    "format-ethernet": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{ipaddr}</span> <span color='#cdd6f4'></span>",
+    "format-disconnected": "<span color='#cba6f7'>󰤭 </span> <span color='#cdd6f4'>disconnected</span>",
+    "on-click":" kitty -e nmtui",
+    "tooltip": true,
+    "interval": 1
+  },
+
+  "battery": {
+    "markup": "pango",
+    "format": "<span color='#cba6f7'>{icon} </span> <span color='#cdd6f4'>{capacity}%</span>",
+    "format-charging": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{capacity}%</span>",
+    "format-full": "<span color='#cba6f7'></span> <span color='#cba6f7'></span> <span color='#cdd6f4'>Fully</span>",
+    "format-time": "{H}h{M}m",
+    "format-icons": ["", "", "", "", ""],
+    "interval": 1,
+    "states": {
+      "warning": 25,
+      "critical": 10
+    },
+    "tooltip": false,
+    "on-click": ""
+  },
+
+  "pulseaudio": {
+    "tooltip": false,
+    "scroll-step": 1,
+    "markup": "pango",
+    "format": "<span color='#cba6f7'>{icon}</span> <span color='#cdd6f4'>{volume}%</span>",
+    "format-muted": "<span color='#cba6f7'></span> <span color='#cdd6f4'> Muted</span>",
+    "on-click": "pavucontrol",
+    "format-icons": {
+      "default": [" ", " ", " "],
+    }
+  },
+
+  "custom/power": {
+    "markup": "pango",
+    "format": "<span color='#cba6f7'> ⏻ </span>",
+    "tooltip": false,
+    "on-click": "$HOME/.config/hypr/powermenu/powermenu.sh",
+  },
+    "custom/bluetooth": {
+        "markup": "pango",
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/bluetooth.sh",
+        "interval": 5,
+        "on-click": "blueman-manager"
+    },
+
+
+
+  "tray": {
+    "icon-size": 12,
+    "spacing": 12
+  }
+}

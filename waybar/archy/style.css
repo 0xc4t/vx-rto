@@ -1,0 +1,65 @@
+@import "waybar.css";
+
+* {
+  background-color: @background;
+  color: @foreground;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 15.5px;
+  font-weight: bold;
+  padding: 1px;
+}
+
+.modules-left {
+  margin-left: 5px;
+}
+
+.modules-right {
+  margin-right: 5px;
+}
+
+#workspaces button {
+  all: initial;
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 9px;
+}
+
+#workspaces button.empty {
+  opacity: 0.5;
+}
+
+
+
+#tray,
+#cpu,
+#network,
+#bluetooth,
+#battery,
+#pulseaudio {
+  min-width: 12px;
+  margin: 0 7.5px;
+}
+
+#battery {
+    margin-left: 10px;
+    font-size: 17px;
+}
+
+#custom-expand-icon {
+  margin-right: 7px;
+}
+
+tooltip {
+  padding: 2px;
+}
+
+#clock {
+  margin-left: 8.75px;
+}
+
+.hidden {
+  opacity: 0;
+}

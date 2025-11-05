@@ -1,6 +1,6 @@
 {
     "$schema": "/etc/xdg/swaync/configSchema.json",
-    "positionX": "left",
+    "positionX": "center",
     "positionY": "top",
     "cssPriority": "user",
 
@@ -12,7 +12,7 @@
 
     "control-center-width": 400,
     "control-center-height": 850,
-    "control-center-margin-top": 15,
+    "control-center-margin-top": 5,
     "control-center-margin-bottom": 10,
     "control-center-margin-right": 0,
     "control-center-margin-left": 20,
@@ -43,7 +43,6 @@
     },
     "widgets": [
         "buttons-grid",
-        "mpris",
         "volume",
         "backlight",
         "dnd",
@@ -51,10 +50,6 @@
         "notifications"
     ],
     "widget-config": {
-        "mpris": {
-            "image-size": 50,
-            "image-radius": 0
-        },
         "volume": {
             "label": " 󰕾 ",
             "expand-button-label": " ",
