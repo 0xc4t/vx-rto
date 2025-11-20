@@ -136,12 +136,10 @@ windowrulev2 = suppressevent maximize, class:.*
 
 This rule suppresses maximize events for all applications.
 
-# Preview
+## Preview
 <img width="1921" height="1078" alt="image" src="https://github.com/user-attachments/assets/e0317bcb-cac6-4267-9387-5f1e82552eed" />
 
 <img width="1921" height="1075" alt="image" src="https://github.com/user-attachments/assets/38e83691-5c85-48c3-b615-d7fb8f291bd6" />
-
-<img width="1921" height="1074" alt="image" src="https://github.com/user-attachments/assets/09d8c856-aa38-4e96-a14a-e041b3957263" />
 
 ---
 
@@ -151,6 +149,9 @@ This rule suppresses maximize events for all applications.
 <img width="1921" height="1076" alt="image" src="https://github.com/user-attachments/assets/691131bf-c24d-413e-85c8-b364f4ba3376" />
 
 ---
+
+### Swaync Notification Bar
+<img width="1921" height="1074" alt="image" src="https://github.com/user-attachments/assets/09d8c856-aa38-4e96-a14a-e041b3957263" />
 
 ### Menu
 <img width="1921" height="1076" alt="image" src="https://github.com/user-attachments/assets/337e1e78-768e-47bc-9d20-ba3fafdbd05b" />
