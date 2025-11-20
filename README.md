@@ -141,14 +141,10 @@ This rule suppresses maximize events for all applications.
 
 <img width="1921" height="1075" alt="image" src="https://github.com/user-attachments/assets/38e83691-5c85-48c3-b615-d7fb8f291bd6" />
 
----
-
 ### Neovim
 <img width="1920" height="1074" alt="image" src="https://github.com/user-attachments/assets/e6ec8962-3587-4cf3-b00e-89ca7a7b2a2a" />
 
 <img width="1921" height="1076" alt="image" src="https://github.com/user-attachments/assets/691131bf-c24d-413e-85c8-b364f4ba3376" />
-
----
 
 ### Swaync Notification Bar
 <img width="1921" height="1074" alt="image" src="https://github.com/user-attachments/assets/09d8c856-aa38-4e96-a14a-e041b3957263" />
@@ -156,9 +152,5 @@ This rule suppresses maximize events for all applications.
 ### Menu
 <img width="1921" height="1076" alt="image" src="https://github.com/user-attachments/assets/337e1e78-768e-47bc-9d20-ba3fafdbd05b" />
 
----
-
 ### Virtual Machine
 <img width="1921" height="1077" alt="image" src="https://github.com/user-attachments/assets/8624b5c7-0bcc-48ca-bc90-779cc156611b" />
-
----
