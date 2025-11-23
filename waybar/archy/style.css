@@ -7,7 +7,7 @@
   border-radius: 0;
   min-height: 0;
   font-family: "JetBrainsMono Nerd Font";
-  font-size: 15.5px;
+  font-size: 15px;
   font-weight: bold;
   padding: 1px;
 }
@@ -31,25 +31,23 @@
   opacity: 0.5;
 }
 
-
-
 #tray,
 #cpu,
 #network,
 #bluetooth,
 #battery,
 #pulseaudio {
-  min-width: 12px;
-  margin: 0 7.5px;
+  min-width: 15px;
+  margin: 0 6px;
 }
 
 #battery {
-    margin-left: 10px;
     font-size: 17px;
+    margin-left: 5px;
 }
 
 #custom-expand-icon {
-  margin-right: 7px;
+  margin-right: 5px;
 }
 
 tooltip {
