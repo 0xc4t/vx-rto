@@ -1,7 +1,13 @@
 {
     "layer": "bottom",
-    "modules-left": ["clock","hyprland/workspaces"],
-    "modules-right": ["pulseaudio", "battery", "network", "custom/power"],
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "pulseaudio", "battery", "network", "custom/power"],
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    },
 
     "pulseaudio": {
         "tooltip": false,
@@ -12,24 +18,23 @@
         "on-click": "pavucontrol",
         "format-icons": {
             "default": ["", "", ""]
-        },
+        }
     },
 
-"battery": {
-    "markup": "pango",
-    "format": "<span color='#cdd6f4'>{icon} </span> <span color='#cdd6f4'>{capacity}%</span>",
-    "format-charging": "<span color='#cdd6f4'></span> <span color='#cdd6f4'>{capacity}%</span>",
-    "format-full": "<span color='#cdd6f4'></span> <span color='#cdd6f4'></span> <span color='#cdd6f4'>Fully</span>",
-    "format-time": "{H}h{M}m",
-    "format-icons": ["", "", "", "", ""],
-    "interval": 1,
-    "states": {
-        "warning": 25,
-        "critical": 10
+    "battery": {
+        "markup": "pango",
+        "format": "<span color='#cdd6f4'>{icon} </span> <span color='#cdd6f4'>{capacity}%</span>",
+        "format-charging": "<span color='#cdd6f4'></span> <span color='#cdd6f4'>{capacity}%</span>",
+        "format-full": "<span color='#cdd6f4'></span> <span color='#cdd6f4'>Fully</span>",
+        "format-icons": ["", "", "", "", ""],
+        "interval": 1,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false,
+        "on-click": "2"
     },
-    "tooltip": false,
-    "on-click": "2"
-},
 
     "cpu": {
         "markup": "pango",
@@ -48,47 +53,50 @@
 
     "clock": {
         "markup": "pango",
-        "format": "<span color='#cdd6f4'></span> <span color='#cdd6f4'>{:%A - %B %d, %Y - %R}</span>",
-        "tooltip": false
+        "format": "<span color='#cdd6f4'></span> <span color='#cdd6f4'>{:%b %d / %I:%M %p}</span>",
+        "tooltip": false,
+        "on-click": "swaync-client -t"
     },
 
-  "hyprland/workspaces": {
-    "on-click": "activate",
-    "format": "{icon}",
-    "format-icons": {
-      "default": "",
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7",
-      "8": "8",
-      "9": "9",
-      "active": "󱓻"
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{icon}",
+        "spacing": 2,
+        "all-outputs": false,
+        "format-icons": {
+            "default": "",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "active": "󱓻"
+        },
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
     },
-    "persistent-workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": []
-    }
-  },
 
     "network": {
         "markup": "pango",
         "interface": "wlan0",
-        "format-wifi": "<span color='#cdd6f4'>󰖩</span> <span color='#cdd6f4'>{essid}</span> <span color='#cdd6f4'>{ipaddr}</span>",
-        "format-ethernet": "<span color='#cdd6f4'></span> <span color='#cdd6f4'>{ipaddr}</span> <span color='#cdd6f4'></span>",
+        "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
+        "format": "{icon} {essid}",
+        "format-wifi": "{icon} {essid}",
+        "format-ethernet": "<span color='#cdd6f4'></span> <span color='#cdd6f4'>{ipaddr}</span>",
         "format-disconnected": "<span color='#cdd6f4'>󰘚</span> <span color='#cdd6f4'>disconnected</span>",
         "tooltip": true,
         "interval": 1,
         "min-length": 25,
         "max-length": 25,
-        "on-click":"kitty -e nmtui"
+        "on-click": "kitty -e nmtui"
     }
-
-
 }
