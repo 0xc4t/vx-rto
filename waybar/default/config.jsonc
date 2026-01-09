@@ -1,8 +1,8 @@
 {
     "layer": "bottom",
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["hyprland/workspaces", "tray"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "pulseaudio", "battery", "network", "custom/power"],
+    "modules-right": ["pulseaudio", "battery", "network", "custom/power"],
 
     "tray": {
         "icon-size": 16,
@@ -95,8 +95,8 @@
         "format-disconnected": "<span color='#cdd6f4'>󰘚</span> <span color='#cdd6f4'>disconnected</span>",
         "tooltip": true,
         "interval": 1,
-        "min-length": 25,
-        "max-length": 25,
+        "min-length": 20,
+        "max-length": 20,
         "on-click": "kitty -e nmtui"
     }
 }

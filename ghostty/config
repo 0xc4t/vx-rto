@@ -1,0 +1,23 @@
+font-family = Iosevka Nerd Font
+font-family-bold = Iosevka Nerd Font
+
+# font-family = JetBrainsMono Nerd Font
+# font-family-bold = JetBrainsMono Nerd Font
+
+font-size = 15
+theme = catppucin-edit.conf
+shell-integration-features = no-cursor,sudo,no-title
+cursor-style = bar
+
+mouse-hide-while-typing = true
+# mouse-scroll-multiplier = 2
+
+window-padding-balance = true
+window-save-state = always
+
+window-padding-x = 15
+window-padding-y = 15
+window-padding-balance = true
+window-padding-color = background
+
+
