@@ -1,122 +1,150 @@
 {
-  "reload_style_on_change": true,
   "layer": "top",
   "position": "top",
-  "spacing": 0,
-  "height": 26,
-  "modules-left": [
-    "hyprland/workspaces"
-  ],
+  "margin-left": 10,
+  "margin-right": 10,
+  "margin-top": 3,
+  "margin-bottom": -8,
+
   "modules-center": [
-    "clock"
-  ],
-  "modules-right": [
-    "custom/bluetooth",
+    "clock",
+    "hyprland/workspaces",
     "pulseaudio",
-    "cpu",
-    "battery",
-    "network",
+ //  "custom/notification",
+     "battery",
     "custom/power"
   ],
 
-
   "hyprland/workspaces": {
-    "markup": "pango",
-    "format": "{icon}",
-    "warp-on-scroll": false,
-    "tooltip": true,
-    "format-icons": {
-      "1": "<span color='#cdd6f4'>●</span>",
-      "2": "<span color='#cdd6f4'>●</span>",
-      "3": "<span color='#cdd6f4'>●</span>",
-      "4": "<span color='#cdd6f4'>●</span>",
-      "5": "<span color='#cdd6f4'>●</span>",
-      "6": "<span color='#cdd6f4'>●</span>",
-      "7": "<span color='#cdd6f4'>●</span>",
-      "8": "<span color='#cdd6f4'>●</span>",
-      "9": "<span color='#cdd6f4'>●</span>",
-      "10": "<span color='#cdd6f4'>●</span>",
-      "urgent": "<span color='#f38ba8'>●</span>",
-      "active": "<span color='#cba6f7'><b>●</b></span>",
-      "default": "<span color='#cdd6f4'>●</span>"
+    "active-only": false,
+    "all-outputs": true,
+    "on-click": "activate",
+	"format": "{icon}",
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5,6,7,8,9,10]
     },
-    "persistent_workspaces": {
-      "outputs": ["*"],
-      "workspaces": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    }
+    "format-icons": {
+	"1": "一",
+	"2": "二",
+	"3": "三",
+	"4": "四",
+	"5": "五",
+	"6": "六",
+	"7": "七",
+	"8": "八",
+	"9": "九",
+	"10": "十",
+}
   },
-
-  "cpu": {
-    "markup": "pango",
-    "interval": 15,
-    "format": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{}%</span>",
-    "max-length": 10
-  },
-
   "clock": {
-    "markup": "pango",
-    "format": "<span color='#cdd6f4'>{:%b %d / %I:%M %p}</span>",
-    "on-click": "swaync-client -t",
-    "tooltip": false
+    "timezone": "Asia/Jakarta",
+    "tooltip": false,
+    "format": "{:%H:%M}",
+    "interval": 1,
   },
 
   "network": {
-    "markup": "pango",
-    "interface": "wlan0",
-    "format-wifi": "<span color='#cba6f7'>󰖩</span> <span color='#cdd6f4'>{essid}</span> <span color='#cdd6f4'>{ipaddr}</span>",
-    "format-ethernet": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{ipaddr}</span> <span color='#cdd6f4'></span>",
-    "format-disconnected": "<span color='#cba6f7'>󰤭 </span> <span color='#cdd6f4'>disconnected</span>",
-    "on-click":" kitty -e nmtui",
-    "tooltip": true,
-    "interval": 1
+    "format-wifi": "󰤢",
+    "format-ethernet": "󰈀 ",
+    "format-disconnected": "󰤠 ",
+    "interval": 5,
+    "tooltip": false,
+    "on-click": "nm-connection-editor"
   },
 
   "battery": {
-    "markup": "pango",
-    "format": "<span color='#cba6f7'>{icon} </span> <span color='#cdd6f4'>{capacity}%</span>",
-    "format-charging": "<span color='#cba6f7'></span> <span color='#cdd6f4'>{capacity}%</span>",
-    "format-full": "<span color='#cba6f7'></span> <span color='#cba6f7'></span> <span color='#cdd6f4'>Fully</span>",
-    "format-time": "{H}h{M}m",
-    "format-icons": ["", "", "", "", ""],
-    "interval": 1,
-    "states": {
-      "warning": 25,
-      "critical": 10
+        "bat": "BAT0",
+        "adapter": "AC",
+        "full-at": 98,
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{icon}",
+        "format-charging": "{icon}",
+        "format-discharging": "{icon}",
+        "format-full": "󰂅",
+        "format-icons": {
+            "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+            "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+        },
+        "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+        "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+        "interval": 5
+    },  "pulseaudio": {
+    "format": "{icon}",
+    "format-muted": " ",
+    "format-icons": {
+      "default": ["", "", " "]
     },
     "tooltip": false,
-    "on-click": ""
+    "on-click": "pavucontrol"
   },
-
-  "pulseaudio": {
-    "tooltip": false,
-    "scroll-step": 1,
-    "markup": "pango",
-    "format": "<span color='#cba6f7'>{icon}</span> <span color='#cdd6f4'>{volume}%</span>",
-    "format-muted": "<span color='#cba6f7'></span> <span color='#cdd6f4'> Muted</span>",
-    "on-click": "pavucontrol",
-    "format-icons": {
-      "default": [" ", " ", " "],
+  "custom/power": {
+    "format": " ",
+    "on-click": "$HOME/.config/powermenu/powermenu.sh",
+    "tooltip": false
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10,
+    "icons": {
+      "blueman": "bluetooth",
+      "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
     }
   },
-
-  "custom/power": {
-    "markup": "pango",
-    "format": "<span color='#cba6f7'> ⏻ </span>",
-    "tooltip": false,
-    "on-click": "$HOME/.config/hypr/powermenu/powermenu.sh",
-  },
-    "custom/bluetooth": {
-        "markup": "pango",
-        "format": "{}",
-        "exec": "~/.config/waybar/scripts/bluetooth.sh",
-        "interval": 5,
-        "on-click": "blueman-manager"
+  "custom/notification": {
+    "tooltip": true,
+    "format": "<span size='11.5pt'>{icon}</span>",
+    "format-icons": {
+      "notification": "󰂚",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
     },
-
-
-
-  "tray": {
-    "icon-size": 12,
-    "spacing": 12
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -t",
+    "escape": true
+  },
+  "custom/mpd-prev": {
+    "format": "󰒮",
+    "on-click": "mpc prev",
+    "tooltip": false
+  },
+  "mpd": {
+    "format": "{stateIcon}",
+    "format-paused": "",
+    "format-stopped": "",
+    "state-icons": {
+      "playing": "",
+      "paused": "",
+      "stopped": ""
+    },
+    "max-length": 20,
+    "ellipsis": true,
+    "tooltip": false,
+    "on-click": "mpc toggle",
+    "on-scroll-up": "mpc next",
+    "on-scroll-down": "mpc prev"
+  },
+  "custom/mpd-next": {
+    "format": "󰒭",
+    "on-click": "mpc next",
+    "tooltip": false
+  },
+  "custom/menu": {
+    "format": "{}",
+    "exec": "echo ; echo 󱓟 app launcher",
+    "interval": 86400, // once every day
+    "tooltip": false,
+    "on-click": "pkill rofi || rofi -show drun",
+    "on-click-right": "~/.config/hypr/wppicker.sh"
   }
 }

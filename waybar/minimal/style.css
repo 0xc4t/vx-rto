@@ -1,43 +1,185 @@
-@import "waybar.css";
-
+/* --- Global Styles --- */
+@import "colors.css";
 
 * {
-  background-color: @background;
-  color: @foreground;
-  border: none;
-  border-radius: 0;
+  font-family: "Iosevka", "Iosevka Nerd Font",
+    "SF Pro Display", "Segoe UI",
+    system-ui, sans-serif;
   min-height: 0;
-  font-family: "JetBrainsMono Nerd Font";
-  font-size: 15px;
+  font-size: 0.9rem;
   font-weight: bold;
 }
 
-.modules-left {
-  margin-left: 8px;
+
+/* --- Waybar Container --- */
+#waybar {
+  border-radius: 100px;
+  margin: 0px;
+  font-weight:100;
+  background-color: transparent;
 }
 
-.modules-right {
-  margin-right: 8px;
+
+
+.modules-center {
+  background-color: @surface;
+  border-radius: 100px;
+}
+/* --- Left Modules (Individual, Fully Rounded Blocks - With Horizontal Spacing & Simple Hover) --- */
+#workspaces {
+  padding: 0.3rem 0.7rem;
+  margin: 2px 0px; /* 5px top/bottom margin, 0px left/right (base for individual control) */
+  border-radius: 6px; /* These modules are always rounded */
+  min-width: 0;
+  border: none;
+  /* Transition for background-color and color only */
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
+#workspaces {
+  padding: 0.3rem 2px;
+  border-radius: 100px;
+  margin-left: 7px; /* Margin from the far left edge */
+  margin-right: 7px; /* Spacing after the workspaces module */
+  background: @surface;
 
-#tray,
-#cpu,
-#battery,
-#network,
-#pulseaudio,
-#clock,
-#custom {
-  min-width: 10px;
-  margin: 0 5px;
-  padding: 2px;
+  color: @on_surface;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 #workspaces button {
-  margin: 0 2px;
-  padding: 0 2px;
+  color: @on_surface;
+  border-radius: 100px; /* Workspaces buttons are always rounded */
+  padding: 0.3rem 0.5rem;
+  margin: 0px 3px;
+  background: inherit;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  outline: none;
 }
 
-tooltip {
-  padding: 2px;
+#workspaces button.active {
+
+  background: linear-gradient(
+    135deg,
+    @tertiary 100%
+  );
+  color: @surface;
+  padding: 0.3rem 1rem;
+  min-width: 25px;
+}
+
+#workspaces button:hover {
+  background-color: @tertiary;
+  color: @surface;
+  min-width: 25px;
+}
+
+#clock {
+  color: @on_surface;
+  background-color: @surface;
+  padding: 0.3rem 0.7rem;
+  margin: 5px 5px;
+  border-radius: 100px; /* This module is always rounded */
+  min-width: 0;
+  border: none;
+}
+
+
+#custom-power,
+#custom-notification,
+#pulseaudio,
+#battery,
+#network {
+  background-color: @surface;
+  padding: 0.7rem;
+
+  border-radius: 100px;
+  min-width: 0;
+  color: @tertiary;
+  border: none;
+}
+
+#custom-power {
+  padding-right: 0.70rem;
+  transition: all 0.2s ease-in-out;
+  color: @tertiary;
+  min-width: 15px;
+}
+
+#battery {
+  transition: all 0.2s ease-in-out;
+  color: @tertiary;
+  min-width: 15px;
+  font-size: 17px;
+}
+
+#tray {
+  padding-right: 0.45rem;
+}
+#custom-notification {
+  padding-right: 0.955rem;
+  transition: all 0.2s ease-in-out;
+  border-radius: 100px;
+}
+
+#mpd {
+  color: @primary;
+  background-color: @surface;
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px;
+  border-radius: 100px; /* This module is always rounded */
+  min-width: 0;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+#custom-mpd-prev,
+#custom-mpd-next {
+  color: @primary;
+  background-color: @surface;
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px;
+  border-radius: 100px;
+  min-width: 0;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+#custom-mpd-prev {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-left: 10px;
+  margin-right: 0px;
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+#custom-mpd-next {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 5px;
+  padding-right: 10px;
+}
+#mpd {
+  border-radius: 0;
+  margin-left: 0;
+  background-color: @surface;
+}
+#custom-mpd-prev:hover,
+#custom-mpd-next:hover {
+  background-color: @surface_container_highest;
+}
+
+#custom-menu {
+  background-color: @surface;
+  padding: 0.3rem 0.7rem;
+  margin: 5px 5px;
+  border-radius: 100px;
+  color: @on_surface;
+  min-width: 13px;
+  border: none;
+  padding-right: 0.8rem;
+  transition: all 0.2s ease-in-out;
 }
