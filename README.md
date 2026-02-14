@@ -141,6 +141,9 @@ This rule suppresses maximize events for all applications.
 
 <img width="1921" height="1075" alt="image" src="https://github.com/user-attachments/assets/38e83691-5c85-48c3-b615-d7fb8f291bd6" />
 
+## New Waybar Style
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/298668ff-36eb-4795-bc27-1a99618fb5d2" />
+
 ### Neovim
 <img width="1920" height="1074" alt="image" src="https://github.com/user-attachments/assets/e6ec8962-3587-4cf3-b00e-89ca7a7b2a2a" />
 
