@@ -123,6 +123,16 @@ local plugins = {
   { "andweeb/presence.nvim", event = "VeryLazy", config = function() require("user.presence") end },
   { "utilyre/barbecue.nvim", dependencies = { "SmiteshP/nvim-navic" }, opts = {} },
   { "folke/which-key.nvim", event = "VeryLazy", opts = {} },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}, config = function() require("user.indentline") end },
+  {
+    "VonHeikemen/fine-cmdline.nvim",
+    dependencies = {
+      {"MunifTanjim/nui.nvim"}
+    },
+    config = function()
+      require("user.fine-cmdline")
+    end
+  },
 }
 
 require("lazy").setup(plugins)

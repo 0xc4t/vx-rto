@@ -36,3 +36,6 @@ keymap("n", "<C-p>", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Live Grep" })
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Buffers" })
 keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Help Tags" })
+
+-- Fine Cmdline
+keymap("n", ":", "<cmd>FineCmdline<CR>", {noremap = true, desc = "Fine Cmdline"})
