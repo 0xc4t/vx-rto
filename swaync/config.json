@@ -3,29 +3,22 @@
     "positionX": "center",
     "positionY": "top",
     "cssPriority": "user",
-
-
     "layer": "overlay",
     "control-center-layer": "top",
     "layer-shell": true,
-
-
     "control-center-width": 400,
     "control-center-height": 850,
-    "control-center-margin-top": 5,
+    "control-center-margin-top": 10,
     "control-center-margin-bottom": 10,
     "control-center-margin-right": 0,
     "control-center-margin-left": 20,
-
     "notification-window-width": 380,
     "notification-icon-size": 50,
     "notification-body-image-height": 200,
     "notification-body-image-width": 200,
-
     "timeout": 8,
     "timeout-low": 6,
     "timeout-critical": 0,
-
     "fit-to-screen": false,
     "keyboard-shortcuts": true,
     "image-visibility": "when-available",

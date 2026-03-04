@@ -38,7 +38,7 @@ local plugins = {
     "nvim-tree/nvim-tree.lua",
     config = function()
       require("nvim-tree").setup({
-        view = { side = "right", width = 30 },
+        view = { side = "left", width = 30 },
         renderer = { indent_markers = { enable = true } }
       })
     end
