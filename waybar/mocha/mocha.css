@@ -1,0 +1,37 @@
+@define-color foreground #cdd6f4;
+@define-color background #1e1e2e;
+
+#tray,
+#cpu,
+#network,
+#bluetooth,
+#battery,
+#pulseaudio {
+  min-width: 15px;
+  margin: 0 6px;
+}
+
+#tray {
+    margin-right: 1px;
+}
+
+#battery {
+    font-size: 17px;
+    margin-left: 5px;
+}
+
+#custom-expand-icon {
+  margin-right: 5px;
+}
+
+tooltip {
+  padding: 2px;
+}
+
+#clock {
+  margin-left: 8.75px;
+}
+
+.hidden {
+  opacity: 0;
+}
