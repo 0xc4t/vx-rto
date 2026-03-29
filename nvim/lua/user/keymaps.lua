@@ -4,7 +4,7 @@ local opts = { noremap = true, silent = true }
 -- General
 keymap("n", "<C-z>", "u", { desc = "Undo" })
 keymap("n", "<C-y>", "<C-r>", { desc = "Redo" })
-keymap("n", "<C-l>", ":vsplit<CR>", { desc = "Vertical Split" })
+keymap("n", "<C-k>", ":vsplit<CR>", { desc = "Vertical Split" })
 
 -- Navigation (Windows-like)
 keymap("n", "<C-Left>", "<C-w>h", opts)
