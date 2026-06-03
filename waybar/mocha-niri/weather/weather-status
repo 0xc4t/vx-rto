@@ -1,0 +1,22 @@
+#!/bin/bash
+
+weather_data=$(curl -fsS --max-time 3 "https://wttr.in?format=j1" 2>/dev/null) || {
+  printf 'Weather unavailable\n'
+  exit 1
+}
+
+jq -r '
+  .current_condition[0] as $current |
+  .nearest_area[0] as $area |
+  .weather[0].astronomy[0] as $sun |
+  [
+    ($area.areaName[0].value // $area.region[0].value // $area.country[0].value // "Current location"),
+    ($current.weatherDesc[0].value // "Unknown"),
+    ("Temperature " + (($current.temp_C // "?") | tostring) + " C"),
+    ("Feels like " + (($current.FeelsLikeC // "?") | tostring) + " C"),
+    ("Humidity " + (($current.humidity // "?") | tostring) + "%"),
+    ("Wind " + (($current.windspeedKmph // "?") | tostring) + " km/h"),
+    ("Sunrise " + ($sun.sunrise // "?")),
+    ("Sunset " + ($sun.sunset // "?"))
+  ] | join("\n")
+' <<< "$weather_data" 2>/dev/null || printf 'Weather unavailable\n'

@@ -1,1 +1,37 @@
-
+#User Preferences
+#Thu Nov 20 00:41:25 WIB 2025
+G_FILE_CHOOSER.HEIGHT.Choose\ Theme\ File=600
+G_FILE_CHOOSER.HEIGHT.Open\ a\ Ghidra\ Project=600
+G_FILE_CHOOSER.HEIGHT.Select\ File\ to\ Import=600
+G_FILE_CHOOSER.HEIGHT.Select\ a\ Ghidra\ Project\ Directory=600
+G_FILE_CHOOSER.VIEW_STYLE.Choose\ Theme\ File=SimpleView
+G_FILE_CHOOSER.VIEW_STYLE.Open\ a\ Ghidra\ Project=SimpleView
+G_FILE_CHOOSER.VIEW_STYLE.Select\ File\ to\ Import=SimpleView
+G_FILE_CHOOSER.VIEW_STYLE.Select\ a\ Ghidra\ Project\ Directory=SimpleView
+G_FILE_CHOOSER.WIDTH.Choose\ Theme\ File=800
+G_FILE_CHOOSER.WIDTH.Open\ a\ Ghidra\ Project=800
+G_FILE_CHOOSER.WIDTH.Select\ File\ to\ Import=800
+G_FILE_CHOOSER.WIDTH.Select\ a\ Ghidra\ Project\ Directory=800
+GhidraShowWhatsNew=false
+LAST_USED_OPTIONS_CONFIG=Current Program Options
+LastImportFile=$HOME/pentest/freelance/sample-app/PARI-DEV/lib/arm64-v8a/libdatastore_shared_counter.so
+LastNewProjectDirectory=$HOME/pentest/freelance/sample-app/
+LastOpenedProject=$HOME/pentest/freelance/sample-app/re
+LastSelectedProjectDirectory=$HOME/pentest/re/ghidra
+OPEN_PROGRAM_DIALOG.HEIGHT=565
+OPEN_PROGRAM_DIALOG.SHOW_HISTORY=true
+OPEN_PROGRAM_DIALOG.WIDTH_WITH_HISTORY=800
+ProjectDirectory=$HOME/pentest/freelance/sample-app/
+RECENT_0=$HOME/pentest/freelance/sample-app/PARI-DEV/lib/arm64-v8a
+RECENT_1=$HOME/pentest/freelance/sample-app
+RECENT_2=$HOME/pentest/re/ghidra
+RECENT_3=$HOME/Downloads
+RECENT_4=$HOME/pentest/re/ghidra
+RECENT_5=$HOME/Downloads
+RecentProjects=$HOME/pentest/freelance/sample-app/re;$HOME/pentest/re/ghidra/ghidra-RE
+SHOW.HELP.NAVIGATION.AID=true
+SHOW_TIPS=false
+TIP_INDEX=6
+Theme=File\:$HOME/.ghidra/.ghidra_11.0.3_DEV/themes/Catppuccin_Mocha.theme
+USER_AGREEMENT=ACCEPT
+ViewedProjects=

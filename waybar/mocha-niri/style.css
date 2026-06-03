@@ -1,0 +1,109 @@
+@define-color foreground #cdd6f4;
+@define-color background #1e1e2e;
+
+* {
+  background-color: @background;
+  color: @foreground;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+ font-family: "Iosevka Nerd Font";
+  font-size: 16px;
+  font-weight: bold;
+  padding: 1px;
+}
+
+.modules-left {
+  margin-left: 5px;
+}
+
+.modules-right {
+  margin-right: 5px;
+}
+
+#workspaces button,
+#custom-workspace-1,
+#custom-workspace-2,
+#custom-workspace-3,
+#custom-workspace-4,
+#custom-workspace-5,
+#custom-workspace-6,
+#custom-workspace-7,
+#custom-workspace-8,
+#custom-workspace-9,
+#custom-workspace-10 {
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 14px;
+  font-size: 14px;
+}
+
+#workspaces button.empty,
+#custom-workspace-1.empty,
+#custom-workspace-2.empty,
+#custom-workspace-3.empty,
+#custom-workspace-4.empty,
+#custom-workspace-5.empty,
+#custom-workspace-6.empty,
+#custom-workspace-7.empty,
+#custom-workspace-8.empty,
+#custom-workspace-9.empty,
+#custom-workspace-10.empty {
+  opacity: 0.5;
+}
+
+#tray,
+#network,
+#bluetooth,
+#cpu,
+#battery,
+#pulseaudio,
+#custom-weather {
+  min-width: 16px;
+  margin: 0 6px;
+}
+
+#tray {
+  margin-right: 1px;
+}
+
+
+#battery {
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+#bluetooth {
+  margin-right: 4px;
+}
+
+#pulseaudio {
+  margin-left: 4px;
+}
+
+#custom-expand-icon {
+  margin-right: 5px;
+}
+
+tooltip {
+  padding: 2px;
+}
+
+#clock {
+  margin-left: 8px;
+}
+
+#custom-weather {
+  min-width: 22px;
+  font-size: 21px;
+  margin-left: 2px;
+  margin-right: 0;
+}
+
+#custom-weather.unavailable {
+  opacity: 0;
+}
+
+.hidden {
+  opacity: 0;
+}

@@ -3,25 +3,17 @@
   "layer": "top",
   "position": "top",
   "spacing": 0,
-  "height": 26,
+  "height": 33,
   "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["clock"],
+  "modules-center": ["clock","custom/weather"],
   "modules-right": [
     "group/tray-expander",
     "network",
+    "bluetooth",
     "pulseaudio",
     "cpu",
-    "battery"
+    "battery",
   ],
-
-"custom/ryzen_tdp": {
-    "exec": "sudo ryzenadj -i | grep 'STAPM VALUE' | awk -F '|' '{print $3}' | xargs | awk '{printf \"%.1f W\", $1}'",
-    "interval": 2,
-    "format": " {}",
-    "on-click": "sudo ryzenadj --stapm-limit=28000 --fast-limit=32000 --slow-limit=30000 --tctl-temp=90 --vrmmax-current=115000",
-    "on-click-right": "sudo ryzenadj --stapm-limit=15000 --fast-limit=15000 --slow-limit=15000 --tctl-temp=80",
-    "tooltip": false
-},
 
   "hyprland/workspaces": {
     "on-click": "activate",
@@ -46,6 +38,11 @@
       "3": [],
       "4": [],
       "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": [],
     }
   },
 
@@ -56,7 +53,8 @@
   },
   "clock": {
     "markup": "pango",
-    "format": "<span color='#cdd6f4'>{:%b %d / %I:%M %p}</span>",
+    "format": "<span color='#cdd6f4'>{:%I:%M %a}</span>",
+    "format-alt": "{:%I:%M %p}",
     "on-click-right": "swaync-client -t",
     "tooltip": false
   },
@@ -72,6 +70,20 @@
     "interval": 3,
     "spacing": 1,
     "on-click": "nmgui"
+  },
+  "bluetooth": {
+    "format": "󰂯",
+    "format-disabled": "󰂲",
+    "format-off": "󰂲",
+    "format-no-controller": "󰂲",
+    "format-connected": "󰂱",
+    "format-connected-battery": "󰂱",
+    "tooltip-format": "{controller_alias}",
+    "tooltip-format-connected": "{controller_alias}\n{device_enumerate}",
+    "tooltip-format-connected-battery": "{controller_alias}\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias} {device_battery_percentage}%",
+    "on-click": "blueman-manager"
   },
   "battery": {
     "format": "{icon}",
@@ -91,6 +103,15 @@
       "critical": 10
     }
   },
+  
+  "custom/weather": {
+    "exec": "$HOME/.config/waybar/mocha/weather/weather.sh",
+    "return-type": "json",
+    "interval": 60,
+    "tooltip": false,
+    "on-click": "notify-send -u low Weather \"$($HOME/.config/waybar/mocha/weather/weather-status)\""
+  },
+
   "pulseaudio": {
     "format": "{icon}",
     "on-click": "pavucontrol",
@@ -107,7 +128,7 @@
       "transition-duration": 600,
       "children-class": "tray-group-item"
     },
-    "modules": ["custom/expand-icon", "tray","custom/ryzen_tdp"]
+    "modules": ["custom/expand-icon", "tray"]
   },
   "custom/expand-icon": {
     "format": " ",

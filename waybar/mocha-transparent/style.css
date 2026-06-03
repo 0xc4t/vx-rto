@@ -1,0 +1,67 @@
+@define-color foreground #cdd6f4;
+@define-color background transparent;
+
+window {
+  background: #1e1e2e;
+  margin: 8px 4px;
+}
+
+#clock {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+#workspaces button {
+  padding: 4px 0;
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+#workspaces button.empty {
+  opacity: 0.5;
+}
+
+#tray,
+#network,
+#bluetooth,
+#cpu,
+#battery,
+#pulseaudio,
+#custom-weather {
+  margin: 4px 0;
+  font-size: 16px;
+}
+
+#tray {
+  margin-top: 4px;
+}
+
+#battery,
+#pulseaudio,
+#bluetooth,
+#network,
+#cpu {
+  font-size: 16px;
+}
+
+#custom-expand-icon {
+  margin: 4px 0;
+  font-size: 16px;
+}
+
+#custom-weather {
+  font-size: 18px;
+  margin: 4px 0;
+}
+
+#custom-weather.unavailable {
+  opacity: 0;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+tooltip {
+  padding: 2px;
+}
