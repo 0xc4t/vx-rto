@@ -1,0 +1,25 @@
+# Ghidra state files
+preferences
+*.rep
+*.gpr
+
+# Editor / backup files
+*.bak
+*.bk
+*.swp
+*.orig
+*~
+
+# Env / secrets (defense in depth)
+.env
+.env.*
+*.pem
+*.key
+id_rsa
+id_ed25519
+
+# Binaries
+*.exe
+*.dll
+*.so
+*.bin
