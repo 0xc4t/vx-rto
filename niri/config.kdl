@@ -1,0 +1,557 @@
+// This config is in the KDL format: https://kdl.dev
+// "/-" comments out the following node.
+// Check the wiki for a full description of the configuration:
+// https://niri-wm.github.io/niri/Configuration:-Introduction
+
+// Input device configuration.
+// Find the full list of options on the wiki:
+// https://niri-wm.github.io/niri/Configuration:-Input
+input {
+    keyboard {
+        xkb {
+            // You can set rules, model, layout, variant and options.
+            // For more information, see xkeyboard-config(7).
+
+            // For example:
+            // layout "us,ru"
+            // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
+
+            // If this section is empty, niri will fetch xkb settings
+            // from org.freedesktop.locale1. You can control these using
+            // localectl set-x11-keymap.
+        }
+
+        // Enable numlock on startup, omitting this setting disables it.
+        numlock
+    }
+
+    // Next sections include libinput settings.
+    // Omitting settings disables them, or leaves them at their default values.
+    // All commented-out settings here are examples, not defaults.
+    touchpad {
+        // off
+        tap
+        // dwt
+        // dwtp
+        // drag false
+        // drag-lock
+        natural-scroll
+        scroll-factor 0.4
+        // accel-speed 0.2
+        // accel-profile "flat"
+        // scroll-method "two-finger"
+        // disabled-on-external-mouse
+    }
+
+    mouse {
+        // off
+        // natural-scroll
+        scroll-factor 0.6
+        // accel-speed 0.2
+        // accel-profile "flat"
+        // scroll-method "no-scroll"
+    }
+
+    trackpoint {
+        // off
+        // natural-scroll
+        // accel-speed 0.2
+        // accel-profile "flat"
+        // scroll-method "on-button-down"
+        // scroll-button 273
+        // scroll-button-lock
+        // middle-emulation
+    }
+     focus-follows-mouse
+    // Uncomment this to make the mouse warp to the center of newly focused windows.
+    // warp-mouse-to-focus
+
+    // Focus windows and outputs automatically when moving the mouse into them.
+    // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
+    // focus-follows-mouse max-scroll-amount="0%"
+}
+
+gestures {
+    hot-corners {
+        bottom-right
+    }
+}
+
+overview {
+    backdrop-color "#1e1e2e"
+}
+
+// You can configure outputs by their name, which you can find
+// by running `niri msg outputs` while inside a niri instance.
+// The built-in laptop monitor is usually called "eDP-1".
+// Find more information on the wiki:
+// https://niri-wm.github.io/niri/Configuration:-Outputs
+// Remember to uncomment the node by removing "/-"!
+output "eDP-1" {
+    // Uncomment this line to disable this output.
+    // off
+
+    // Resolution and, optionally, refresh rate of the output.
+    // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
+    // If the refresh rate is omitted, niri will pick the highest refresh rate
+    // for the resolution.
+    // If the mode is omitted altogether or is invalid, niri will pick one automatically.
+    // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
+    mode "1920x1200@60.001"
+
+    // You can use integer or fractional scale, for example use 1.5 for 150% scale.
+    scale 1.0
+
+    // Transform allows to rotate the output counter-clockwise, valid values are:
+    // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
+    transform "normal"
+
+    // Position of the output in the global coordinate space.
+    // This affects directional monitor actions like "focus-monitor-left", and cursor movement.
+    // The cursor can only move between directly adjacent outputs.
+    // Output scale and rotation has to be taken into account for positioning:
+    // outputs are sized in logical, or scaled, pixels.
+    // For example, a 3840×2160 output with scale 2.0 will have a logical size of 1920×1080,
+    // so to put another output directly adjacent to it on the right, set its x to 1920.
+    // If the position is unset or results in an overlap, the output is instead placed
+    // automatically.
+    position x=316 y=1440
+}
+
+output "DP-3" {
+    mode "2560x1440@180.0"
+    scale 1.0
+    transform "normal"
+    position x=0 y=0
+}
+
+// Settings that influence how windows are positioned and sized.
+// Find more information on the wiki:
+// https://niri-wm.github.io/niri/Configuration:-Layout
+layout {
+    // Set gaps around windows in logical pixels.
+    gaps 8
+
+       // When to center a column when changing focus, options are:
+    // - "never", default behavior, focusing an off-screen column will keep at the left
+    //   or right edge of the screen.
+    // - "always", the focused column will always be centered.
+    // - "on-overflow", focusing a column will center it if it doesn't fit
+    //   together with the previously focused column.
+    center-focused-column "never"
+    // always-center-single-column
+
+    // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
+    preset-column-widths {
+        // Proportion sets the width as a fraction of the output width, taking gaps into account.
+        // For example, you can perfectly fit four windows sized "proportion 0.25" on an output.
+        // The default preset widths are 1/3, 1/2 and 2/3 of the output.
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+        proportion 1.0
+
+        // Fixed sets the width in logical pixels exactly.
+        // fixed 1920
+    }
+
+    // You can also customize the heights that "switch-preset-window-height" (Mod+Ctrl+Shift+R) toggles between.
+    // preset-window-heights { }
+
+    // You can change the default width of the new windows.
+    default-column-width { proportion 0.8; }
+    // If you leave the brackets empty, the windows themselves will decide their initial width.
+    // default-column-width {}
+
+    // By default focus ring and border are rendered as a solid background rectangle
+    // behind windows. That is, they will show up through semitransparent windows.
+    // This is because windows using client-side decorations can have an arbitrary shape.
+    //
+    // If you don't like that, you should uncomment `prefer-no-csd` below.
+    // Niri will draw focus ring and border *around* windows that agree to omit their
+    // client-side decorations.
+    //
+    // Alternatively, you can override it with a window rule called
+    // `draw-border-with-background`.
+
+    // You can change how the focus ring looks.
+    focus-ring {
+        off
+   }
+
+    // You can also add a border. It's similar to the focus ring, but always visible.
+    border {
+        width 2
+        active-color "#b4befe"
+        inactive-color "#2a273f"
+        urgent-color "#9b0000"
+    }
+
+    shadow {
+        on
+        softness 2
+        spread 1
+        offset x=0 y=1
+        color "#1a1a1aee"
+    }
+
+   struts {
+        left 1
+        right 1
+        top 1
+        bottom 1
+    }
+}
+
+spawn-at-startup "quickshell" "-p" "$HOME/.config/quickshell-niri"
+spawn-at-startup "vicinae" "server"
+spawn-at-startup "swaync" "-c" "$HOME/.config/swaync/config.json" "-s" "$HOME/.config/swaync/style.css"
+spawn-at-startup "awww-daemon"
+spawn-at-startup "awww" "img" "$HOME/.config/wallpaper/default.jpg" "--transition-fps" "60" "--transition-type" "any" "--transition-duration" "3"
+
+blur {
+    passes 1
+    offset 4.0
+    noise 0.01
+    saturation 1.1
+}
+
+
+hotkey-overlay {
+    // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
+    skip-at-startup
+}
+
+// Uncomment this line to ask the clients to omit their client-side decorations if possible.
+// If the client will specifically ask for CSD, the request will be honored.
+// Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
+// This option will also fix border/focus ring drawing behind some semitransparent windows.
+// After enabling or disabling this, you need to restart the apps for this to take effect.
+prefer-no-csd
+
+// You can change the path where screenshots are saved.
+// A ~ at the front will be expanded to the home directory.
+// The path is formatted with strftime(3) to give you the screenshot date and time.
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+// You can also set this to null to disable saving screenshots to disk.
+// screenshot-path null
+
+// Animation settings.
+// The wiki explains how to configure individual animations:
+// https://niri-wm.github.io/niri/Configuration:-Animations
+animations {
+    // Uncomment to turn off all animations.
+    // off
+
+    // Slow down all animations by this factor. Values below 1 speed them up instead.
+    // slowdown 3.0
+}
+
+// Window rules let you adjust behavior for individual windows.
+// Find more information on the wiki:
+// https://niri-wm.github.io/niri/Configuration:-Window-Rules
+
+window-rule {
+    match app-id="^xwaylandvideobridge$"
+    open-focused false
+    default-column-width { fixed 1; }
+    opacity 0.0
+}
+
+window-rule {
+    draw-border-with-background false
+    geometry-corner-radius 10
+    clip-to-geometry true
+
+    background-effect {
+        blur true
+        xray true
+    }
+
+    popups {
+        background-effect {
+            blur true
+            xray true
+        }
+    }
+}
+
+// Hyprland parity: app opacity rules.
+window-rule {
+    match app-id="^(zoom)$" title="^(Zoom Workplace)$"
+    match app-id=r#"^org\.telegram\.desktop$"#
+    match app-id="^(Code|code)$"
+    match app-id=r#"^com\.obsproject\.Studio$"#
+    match app-id="^(Spotify)$"
+    opacity 0.95
+}
+
+window-rule {
+    match app-id="^(code-url-handler)$"
+    match app-id="^(code-insiders-url-handler)$"
+    match app-id="^(qt5ct)$"
+    match app-id="^(qt6ct)$"
+    match app-id=r#"^org\.kde\.ark$"#
+    match app-id="^(blueman-manager)$"
+    match app-id="^(steamwebhelper)$"
+    match app-id=r#"^org\.telegram\.desktop\._cc56ebf4782c34c32f1a976289a609d6$"#
+    match app-id="^(WebCord)$"
+    match app-id="^(yad)$"
+    match app-id=r#"^org\.kde\.polkit-kde-authentication-agent-1$"#
+    match app-id="^(polkit-gnome-authentication-agent-1)$"
+    match app-id=r#"^org\.freedesktop\.impl\.portal\.desktop\.gtk$"#
+    match app-id=r#"^org\.freedesktop\.impl\.portal\.desktop\.hyprland$"#
+    match app-id=r#"^org\.gnome\.Loupe$"#
+    match app-id="^(gnome-calculator)$"
+    match app-id="^(evince)$"
+    match app-id=r#"^re\.rizin\.cutter$"#
+    opacity 0.90
+}
+
+window-rule {
+    match app-id="^(Thunar|thunar)$"
+    opacity 0.92
+}
+
+window-rule {
+    match app-id="^(discord)$"
+    opacity 0.98
+}
+
+// Hyprland parity: floating utility/dialog windows.
+window-rule {
+    match app-id=r#"^org\.pulseaudio\.pavucontrol$"#
+    open-floating true
+    default-column-width { fixed 920; }
+    default-window-height { fixed 450; }
+    opacity 0.90
+}
+
+window-rule {
+    match app-id=r#"^com\.network\.manager$"#
+    match app-id="^(qt5ct)$"
+    match app-id="^(qt6ct)$"
+    match app-id=r#"^org\.kde\.ark$"#
+    match app-id="^(blueman-manager)$"
+    match app-id="^(yad)$"
+    match app-id=r#"^org\.kde\.polkit-kde-authentication-agent-1$"#
+    open-floating true
+    opacity 0.90
+}
+
+window-rule {
+    match app-id=r#"^org\.gnome\.Loupe$"#
+    open-floating true
+    default-column-width { fixed 1200; }
+    default-window-height { fixed 900; }
+}
+
+window-rule {
+    match app-id="^(gnome-calculator)$"
+    open-floating true
+    default-column-width { fixed 360; }
+    default-window-height { fixed 500; }
+}
+
+window-rule {
+    match app-id=r#"^com\.gabm\.satty$"#
+    match app-id="^(hyprland-share-picker)$"
+    match app-id="^(mpv)$"
+    match app-id="^(firefox)$" title="^(Library)$"
+    match title="^(Java)$"
+    open-floating true
+}
+
+window-rule {
+    match app-id="^(steam)$"
+    exclude app-id="^(steam)$" title="^(Steam)$"
+    open-floating true
+}
+
+window-rule {
+    match app-id="^(ONLYOFFICE)$"
+    match app-id="^(Java)$"
+    border { off; }
+}
+
+window-rule {
+    match app-id="^(VirtualBox Machine)$" title="^$"
+    background-effect {
+        blur false
+        xray true
+    }
+}
+
+window-rule {
+    match app-id="^google-chrome$"
+    match app-id="^zen$"
+    open-maximized true
+    open-maximized-to-edges false
+}
+
+// Work around WezTerm's initial configure bug
+// by setting an empty default-column-width.
+window-rule {
+    // This regular expression is intentionally made as specific as possible,
+    // since this is the default config, and we want no false positives.
+    // You can get away with just app-id="wezterm" if you want.
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    default-column-width {}
+}
+
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    match app-id=r#"firefox$"#
+    default-column-width { proportion 0.5; }
+}
+
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+layer-rule {
+    match namespace="^waybar$"
+
+    background-effect {
+        blur true
+        xray true
+    }
+
+    popups {
+        background-effect {
+            blur true
+            xray true
+        }
+    }
+}
+
+layer-rule {
+    match namespace="^swaync-notification-window$"
+
+    background-effect {
+        blur true
+        xray true
+    }
+
+    popups {
+        background-effect {
+            blur true
+            xray true
+        }
+    }
+}
+
+// Example: block out two password managers from screen capture.
+// (This example rule is commented out with a "/-" in front.)
+/-window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+
+    block-out-from "screen-capture"
+
+    // Use this instead if you want them visible on third-party screenshot tools.
+    // block-out-from "screencast"
+}
+
+// Example: enable rounded corners for all windows.
+// (This example rule is commented out with a "/-" in front.)
+/-window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+
+binds {
+    Mod+Shift+E { quit; }
+    Mod+Shift+Slash { show-hotkey-overlay; }
+
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "brightnessctl set 10%-"; }
+    XF86MonBrightnessUp   allow-when-locked=true { spawn-sh "brightnessctl set 10%+"; }
+    XF86AudioRaiseVolume  allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+"; }
+    XF86AudioLowerVolume  allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-"; }
+    XF86AudioMicMute      allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    XF86AudioMute         allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioPlay         allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    XF86AudioStop         allow-when-locked=true { spawn-sh "playerctl stop"; }
+    XF86AudioPrev         allow-when-locked=true { spawn-sh "playerctl previous"; }
+    XF86AudioNext         allow-when-locked=true { spawn-sh "playerctl next"; }
+
+    Mod+Shift+Return hotkey-overlay-title="Open startup terminal" { spawn "kitty" "--session" "$HOME/.config/kitty/startup.conf"; }
+    Mod+Return       hotkey-overlay-title="Open terminal" { spawn "kitty" "-c" "$HOME/.config/kitty/kitty.conf"; }
+    Mod+D            hotkey-overlay-title="Open launcher" { spawn "vicinae" "open"; }
+    Mod+Space        hotkey-overlay-title="Open launcher" { spawn "vicinae" "open"; }
+    Mod+I            hotkey-overlay-title="Open file manager" { spawn "thunar"; }
+    Mod+L            hotkey-overlay-title="Lock screen" { spawn "hyprlock" "-c" "$HOME/.config/hyprlock/hyprlock.conf"; }
+    Mod+Q            repeat=false { close-window; }
+    Mod+Shift+M      { quit; }
+    Mod+O            repeat=false { toggle-overview; }
+    Mod+Print        { spawn "poc"; }
+    Print            { spawn "screenshot"; }
+    Mod+Shift+P      { spawn "screenshot"; }
+
+    Mod+F       { fullscreen-window; }
+    Mod+Shift+F { fullscreen-window; }
+    Mod+Ctrl+F  { expand-column-to-available-width; }
+    Mod+M       { spawn "$HOME/.config/niri/scripts/maximize_tiling.sh"; }
+    Mod+Ctrl+M  { spawn "$HOME/.config/niri/scripts/maximize_tiling.sh"; }
+
+    Mod+Shift+Space { spawn "$HOME/.config/niri/scripts/toggle_float_center.sh"; }
+    Mod+V           { spawn "$HOME/.config/niri/scripts/toggle_float_center.sh"; }
+    Mod+Shift+V     { switch-focus-between-floating-and-tiling; }
+
+    Mod+Left  { focus-column-left; }
+    Mod+Right { focus-column-right; }
+    Mod+Up    { focus-window-up; }
+    Mod+Down  { focus-window-down; }
+
+    Mod+Shift+Left  { move-column-left; }
+    Mod+Shift+Right { move-column-right; }
+    Mod+Shift+Up    { move-window-up; }
+    Mod+Shift+Down  { move-window-down; }
+
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+    Mod+0 { focus-workspace 10; }
+
+    Mod+Shift+1 { move-window-to-workspace 1; }
+    Mod+Shift+2 { move-window-to-workspace 2; }
+    Mod+Shift+3 { move-window-to-workspace 3; }
+    Mod+Shift+4 { move-window-to-workspace 4; }
+    Mod+Shift+5 { move-window-to-workspace 5; }
+    Mod+Shift+6 { move-window-to-workspace 6; }
+    Mod+Shift+7 { move-window-to-workspace 7; }
+    Mod+Shift+8 { move-window-to-workspace 8; }
+    Mod+Shift+9 { move-window-to-workspace 9; }
+    Mod+Shift+0 { move-window-to-workspace 10; }
+
+    Mod+S       { focus-workspace "magic"; }
+    Mod+Shift+S { move-window-to-workspace "magic"; }
+
+    Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp   cooldown-ms=150 { focus-workspace-up; }
+
+    Mod+R       { switch-preset-column-width; }
+    Mod+Shift+R { switch-preset-column-width-back; }
+    Mod+C       { center-column; }
+    Mod+Ctrl+C  { center-visible-columns; }
+    Mod+Minus   { set-column-width "-10%"; }
+    Mod+Equal   { set-column-width "+10%"; }
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+Equal { set-window-height "+10%"; }
+
+    Mod+BracketLeft  { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
+    Mod+Comma        { consume-window-into-column; }
+    Mod+Period       { expel-window-from-column; }
+    Mod+W            { toggle-column-tabbed-display; }
+    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+    Ctrl+Alt+Delete { quit; }
+}
