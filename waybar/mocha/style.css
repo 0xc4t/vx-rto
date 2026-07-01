@@ -7,7 +7,7 @@
   border: none;
   border-radius: 0;
   min-height: 0;
-  font-family: "Iosevka Nerd Font";
+  font-family: "Iosevka Nerd Font Mono", "Symbols Nerd Font";
   font-size: 16px;
   font-weight: bold;
   padding: 1px;
@@ -29,6 +29,12 @@
   font-size: 14px;
 }
 
+#workspaces button.active {
+  font-family: "Symbols Nerd Font";
+  font-size: 16px;
+  font-weight: normal;
+}
+
 #workspaces button.empty {
   opacity: 0.5;
 }
@@ -41,7 +47,18 @@
 #pulseaudio,
 #custom-weather {
   min-width: 16px;
-  margin: 0 6px;
+  margin: 0 5px;
+}
+
+#network,
+#bluetooth,
+#cpu,
+#battery,
+#pulseaudio,
+#custom-expand-icon {
+  font-family: "Symbols Nerd Font";
+  font-size: 16px;
+  font-weight: normal;
 }
 
 #tray {
@@ -49,17 +66,18 @@
 }
 
 
-#battery {
-  font-size: 16px;
-  margin-left: 5px;
+#cpu {
+  font-size: 15px;
 }
 
-#bluetooth {
-  margin-right: 4px;
+#battery {
+  margin-left: 3px;
+  margin-right: 1px;
+  min-width: 14px;
 }
 
 #pulseaudio {
-  margin-left: 4px;
+  font-size: 14px;
 }
 
 #custom-expand-icon {
@@ -75,8 +93,10 @@ tooltip {
 }
 
 #custom-weather {
+  font-family: "Symbols Nerd Font";
   min-width: 22px;
-  font-size: 21px;
+  font-size: 19px;
+  font-weight: normal;
   margin-left: 2px;
   margin-right: 0;
 }

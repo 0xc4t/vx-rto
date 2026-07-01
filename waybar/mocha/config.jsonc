@@ -136,7 +136,7 @@
     "on-click": "$HOME/.config/powermenu/powermenu.sh"
   },
   "tray": {
-    "icon-size": 15,
+    "icon-size": 16,
     "spacing": 12
   }
 }
